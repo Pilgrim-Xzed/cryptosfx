@@ -10,6 +10,6 @@ sleep 1
 
 
 
-/usr/local/bin/gunicorn src.wsgi:application -w 2 -b :8888
+/usr/local/bin/gunicorn cryptohack.wsgi:application -w 2 -b :8888
 
 
