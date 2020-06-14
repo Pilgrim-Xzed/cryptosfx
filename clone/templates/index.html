@@ -1,0 +1,1228 @@
+{% extends 'base.html' %}
+
+{% load static%}
+{% block content %}
+
+<div class="headerBlock">
+    <div id="header" class="wrapper">
+        <div class="logoBlock">
+            <a title="OptionFair®" href="index.html" id="logo"><img alt="OptionFair®" src="{% static 'assets/images/logo.png' %}"></a>
+        </div>
+        <div class="topMenu">
+            <div class="topMenuBlock">
+                <a href="index.html" title="Trade">Trade</a><a href="aboutus.html" title="About us">About us</a><a
+                    href="about-forex.html" title="TRADer’s CENTER">TRADer’s CENTER</a><a href="forex-videos.html"
+                    title="Education">Education</a><a href="trading-benefits.html" class="lastMenuItem"
+                    title="Legal">Legal</a>
+                <div class="language_selector">
+
+                </div>
+                <a href="?log#form" class="login_btn" title="Login">Login</a><a href="?reg#form"
+                    class="lastMenuItem openAccount_btn" title="Open Account ">Open Account </a> <noscript>
+                    <div class="languages">
+                        <div id="lang_sel_list" class="lang_sel_list_vertical">
+                            <ul>
+                                <li class="icl-en">
+                                    <a href="index.html" class="lang_sel_sel">
+                                        <img class="iclflag"
+                                            src="wp-content/plugins/sitepress-multilingual-cms/res/flags/en.png"
+                                            alt="en" title="English" />&nbsp;
+                                    </a>
+                                </li>
+                                <li class="icl-de">
+                                    <a href="de.html" class="lang_sel_other">
+                                        <img class="iclflag"
+                                            src="wp-content/plugins/sitepress-multilingual-cms/res/flags/de.png"
+                                            alt="de" title="Deutsch" />&nbsp;
+                                    </a>
+                                </li>
+                                <li class="icl-ru">
+                                    <a href="ru.html" class="lang_sel_other">
+                                        <img class="iclflag"
+                                            src="wp-content/plugins/sitepress-multilingual-cms/res/flags/ru.png"
+                                            alt="ru" title="Русский" />&nbsp;
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </noscript>
+            </div>
+            <!-- Login Form **************************************************************************************************************************  -->
+
+            <!-- Login Form **************************************************************************************************************************  -->
+
+        </div><!-- top menu -->
+    </div><!-- header -->
+</div>
+
+
+
+<div id="" class="hfeed ">
+    <div id="MainContent" dir="ltr">
+        <section class="bannerBlock">
+            <div class="bx-wrapper">
+                <div class="bx-viewport">
+                    <div class="bx-wrapper" style="max-width: 100%;">
+                        <div class="bx-viewport"
+                            style="width: 100%; overflow: hidden; position: relative; height: 550px;">
+                            <ul class="bxslider" id="bxslider" style="width: auto; position: relative;">
+                                <li style="float: none; list-style: none; position: absolute; width: 1689px; z-index: 51; display: block; opacity: 0.798952;"
+                                    class="bx-clone ">
+                                    <div
+                                        style="background-image: url('/static/assets/07/banner_2.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center center; ">
+                                        <img src="{% static 'assets/07/banner_2.jpg' %}" style="opacity: 0; ">
+                                        <div class="bannerText">
+                                            <div class="wrapper">
+                                                <div class="bannerContent">
+                                                    <div class="slide_title">We Have</div>
+                                                    <div>The Full Package</div>
+                                                    <p>Benefit from a packed product suite of</p>
+                                                    <p>Forex/CFDs &amp; Binary. CryptoSphereFx provides</p>
+                                                    <p>an enjoyable trading experience with a </p>
+                                                    <p>straightforward and intuitive platform.</p>
+                                                    <a href="?reg#form" class="slideBtn openAccBtn">Open Account</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="bannerTextBottom">
+                                            <div class="wrapper">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li style="float: none; list-style: none; position: absolute; width: 1689px; z-index: 0; display: none;"
+                                    class="bx-clone ">
+                                    <div
+                                        style="background-image: url('/static/assets/07/banner_expertise_white.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center center; ">
+                                        <img src="{% static 'assets/07/banner_expertise_white.jpg' %}" style="opacity: 0; ">
+                                        <div class="bannerText">
+                                            <div class="wrapper">
+                                                <div class="bannerContent">
+                                                    <div class="slide_black">
+                                                        <div class="slide_title">The Expertise</div>
+                                                        <div>You Need To Succeed</div>
+                                                        <p>CryptoSphereFx is a brokerage that works</p>
+                                                        <p>with you. We assist, educate and train</p>
+                                                        <p>our clients to make educated</p>
+                                                        <p>investment decisions.</p>
+                                                        <a href="?reg#form" class="slideBtn openAccBtn">Open
+                                                            Account</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="bannerTextBottom">
+                                            <div class="wrapper">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li style="float: none; list-style: none; position: absolute; width: 1689px; z-index: 0; display: list-item; opacity: 0.201048;"
+                                    class="bx-clone ">
+                                    <div
+                                        style="background-image: url('/static/assets/07/banner_lse.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center center; ">
+                                        <img src="{% static 'assets/07/banner_lse.jpg' %}" style="opacity: 0; ">
+                                        <div class="bannerText">
+                                            <div class="wrapper">
+                                                <div class="bannerContent">
+                                                    <div class="slide_title">Trade SAFE</div>
+                                                    <div>Trade CryptoSphereFx</div>
+                                                    <p>BO Tradefinancials is a part of the</p>
+                                                    <p>TechFinancials group and is listed on</p>
+                                                    <p>London Stock Exchange AIM</p>
+                                                    <a href="?reg#form" class="slideBtn openAccBtn">Open Account</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="bannerTextBottom">
+                                            <div class="wrapper">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="bx-controls bx-has-pager">
+                            <div class="bx-pager bx-default-pager">
+                                <div class="bx-pager-item"><a href="" data-slide-index="0"
+                                        class="bx-pager-link active">1</a></div>
+                                <div class="bx-pager-item"><a href="" data-slide-index="1" class="bx-pager-link">2</a>
+                                </div>
+                                <div class="bx-pager-item"><a href="" data-slide-index="2" class="bx-pager-link">3</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="assetsTickerBlock">
+                <div class="assetsTicker">
+                    <div class="ticker">
+                        <div class="stocks-container" id="stocks-container"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section
+            style="background: url(/static/assets/07/3icons.jpg) no-repeat 100%; background-size: cover; background-repeat: no-repeat; background-position: center center; ">
+            <div class="platform_block wrapper">
+                <div class="platform_text">
+                    <p class="platform_title">CryptoSphereFx TECHNOLOGY</p>
+                    <p class="platform_descr">Innovative and User Friendly, you can explore a world of financial
+                        opportunities from a single screen: <span>Forex, CFDs &amp; Binary</span></p>
+                    <p class="platform_descr">Join us and trade on a broad variety of assets and instruments
+                        including: stocks, commodities, currencies &amp; indices, for a completely tailored trading
+                        experience!</p>
+                </div>
+                <div class="platform_icons">
+                    <p class="platform_title">trade in just 3 steps</p>
+                    <div class="platform_icon"><img class="alignnone size-full wp-image-52743" alt="PICK_A_PRODUCT"
+                            src="{% static 'assets/06/PICK_A_PRODUCT.png' %}" width="87" height="88"><br>
+                        <span>PICK A PRODUCT</span></div>
+                    <div class="platform_icon"><img class="alignnone size-full wp-image-52741" alt="CHOOSE_AN_ASSET"
+                            src="{% static 'assets/06/CHOOSE_AN_ASSET.png' %}" width="87" height="88"><br>
+                        <span>CHOOSE AN ASSET</span></div>
+                    <div class="platform_icon"><img class="alignnone size-full wp-image-52748" alt="INVEST_AND_TRADE"
+                            src="{% static 'assets/06/INVEST_AND_TRADE.png' %}" width="90" height="90"><br>
+                        <span>INVEST AND TRADE</span></div>
+                </div>
+            </div>
+        </section>
+
+
+        <style>
+            .boxx {
+                position: relative;
+                width: 18em;
+                font-weight: bold;
+                font-family: arial;
+                border-radius: 30px;
+                display: inline-block;
+                height: 28em;
+                border: 6px inset gray;
+            }
+
+            button {
+                cursor: pointer;
+            }
+
+            .boxx span {
+                font-size: 18pt;
+                display: block;
+                margin: 1em 0em 0em;
+            }
+        </style>
+        <center>
+            <h1><b>Forex/CFDs<br>
+                    Pricing Plans</b></h1>
+            <div class="boxx" style="background: #490326;color:white;border:6px solid #490326;">
+                <span>Beginner Plan</span><br>
+                <h1><b>
+                    </b></h1><br>
+                <h4>Min.<br>5% deposit bonus</h4><br>
+                <h4>Integrated online helpcenter</h4><br>
+                <h5 style="width: 100%;display:block;color:white;height:3em;line-height:3em;background:black;">
+                    <b>DEDICATED ACCOUNT MANAGER</b></h5>
+                <br>
+                <h4>Maintenance Fees: Yes</h4><br>
+                <h4>Trading Freq.: Low</h4><br>
+                <h4>Local language helpcenter</h4><br>
+                <h4>Free Withdrawal: No</h4><br>
+                <a href="?reg#form"><button>Get Started</button></a>
+
+            </div>
+
+
+            <div class="boxx" style="background: #ac0156;color:white;border:6px solid #ac0156;">
+                <span>Advanced Plan</span><br>
+                <h1><b></b></h1><br>
+                <h4>Min.<br>10% deposit bonus</h4><br>
+                <h4>Integrated online helpcenter</h4><br>
+                <h5 style="width: 100%;display:block;color:white;height:3em;line-height:3em;background:black;">
+                    <b>SENIOR ACCOUNT MANAGER</b></h5>
+                <br>
+                <h4>Maintenance Fees: No</h4><br>
+                <h4>Trading Freq.: Low</h4><br>
+                <h4>Local language helpcenter</h4><br>
+                <h4>Free Withdrawal: Yes</h4><br>
+                <a href="?reg#form"><button>Get Started</button></a>
+
+            </div>
+
+
+
+            <div class="boxx" style="background: #070329;color:white;border:6px solid #070329;">
+                <span>Luxury Plan</span><br>
+                <h1><b></b></h1><br>
+                <h4>Min.<br>12.5% deposit bonus</h4><br>
+                <h4>Integrated online helpcenter</h4><br>
+                <h5 style="width: 100%;display:block;color:white;height:3em;line-height:3em;background:black;">
+                    <b>PERSONAL RELATIONSHIP MANAGER</b></h5>
+                <br>
+                <h4>Maintenance Fees: No</h4><br>
+                <h4>Trading Freq.: High</h4><br>
+                <h4>Local language helpcenter</h4><br>
+                <h4>Free Withdrawal: Yes</h4><br>
+                <a href="?reg#form"><button>Get Started</button></a>
+
+            </div>
+
+
+            <div class="boxx" style="background: #20195e;color:white;border:6px solid #20195e;">
+                <span>Legend Plan</span><br>
+                <h1><b></b></h1><br>
+                <h4>Min.<br>20% deposit bonus</h4><br>
+                <h4>Integrated online helpcenter</h4><br>
+                <h5 style="width: 100%;display:block;color:white;height:3em;line-height:3em;background:black;">
+                    <b>PERSONAL RELATIONSHIP MANAGER</b></h5>
+                <br>
+                <h4>Maintenance Fees: No</h4><br>
+                <h4>Trading Freq.: Max</h4><br>
+                <h4>Local language helpcenter</h4><br>
+                <h4>Free Withdrawal: Yes</h4><br>
+                <a href="?reg#form"><button>Get Started</button></a>
+
+            </div>
+        </center>
+
+        <script>
+
+            document.addEventListener("contextmenu", function (e) {
+                e.preventDefault();
+            }, false);
+
+        </script>
+        <br>
+        <center>
+            <h2><b>
+                    <font face="arial black">OUR FULLY LATEST AUTOMATED PAYOUT SYSTEM</font>
+                </b></h2>
+
+            <iframe
+                src="https://www.btcwidget.info/widget/liveTx/%23000000/%23000000/%23000000/%23ffffff/%23000000/1100/500/10"
+                width="1100" height="500" frameborder="0" scrolling="no"></iframe>
+        </center>
+        <div style="position: relative;width:100%;height:auto;background:black;top:-0.8em;">
+            <div class="tradingview-widget-container" style="width: 100%; height: 46px;">
+                <iframe scrolling="no" allowtransparency="true" frameborder="0"
+                    src="https://s.tradingview.com/embed-widget/ticker-tape/?locale=en#%7B%22symbols%22%3A%5B%7B%22title%22%3A%22S%26P%20500%22%2C%22proName%22%3A%22INDEX%3ASPX%22%7D%2C%7B%22title%22%3A%22Shanghai%20Composite%22%2C%22proName%22%3A%22INDEX%3AXLY0%22%7D%2C%7B%22title%22%3A%22EUR%2FUSD%22%2C%22proName%22%3A%22FX_IDC%3AEURUSD%22%7D%2C%7B%22title%22%3A%22BTC%2FUSD%22%2C%22proName%22%3A%22BITFINEX%3ABTCUSD%22%7D%2C%7B%22title%22%3A%22ETH%2FUSD%22%2C%22proName%22%3A%22BITFINEX%3AETHUSD%22%7D%5D%2C%22isTransparent%22%3Afalse%2C%22displayMode%22%3A%22adaptive%22%2C%22colorTheme%22%3A%22light%22%2C%22width%22%3A%22100%25%22%2C%22height%22%3A46%2C%22utm_source%22%3A%22cryptospherefx.com%22%2C%22utm_medium%22%3A%22widget%22%2C%22utm_campaign%22%3A%22ticker-tape%22%7D"
+                    style="box-sizing: border-box; height: 46px; width: 100%;"></iframe>
+
+                <style>
+                    .tradingview-widget-copyright {
+                        font-size: 13px !important;
+                        line-height: 32px !important;
+                        text-align: center !important;
+                        vertical-align: middle !important;
+                        font-family: 'Trebuchet MS', Arial, sans-serif !important;
+                        color: #9db2bd !important;
+                    }
+
+                    .tradingview-widget-copyright .blue-text {
+                        color: #2196f3 !important;
+                    }
+
+                    .tradingview-widget-copyright a {
+                        text-decoration: none !important;
+                        color: #9db2bd !important;
+                    }
+
+                    .tradingview-widget-copyright a:visited {
+                        color: #9db2bd !important;
+                    }
+
+                    .tradingview-widget-copyright a:hover .blue-text {
+                        color: #38acdb !important;
+                    }
+
+                    .tradingview-widget-copyright a:active .blue-text {
+                        color: #299dcd !important;
+                    }
+
+                    .tradingview-widget-copyright a:visited .blue-text {
+                        color: #2196f3 !important;
+                    }
+                </style>
+            </div>
+            <!-- TradingView Widget END -->
+
+
+
+
+        </div>
+
+
+
+
+
+
+        <style type="text/css">
+            input[type=text],
+            input[type=password],
+            input[type=email] {
+                width: 20em;
+                text-indent: 0.8em;
+                height: 2.5em;
+                font-size: 12pt;
+                background: white;
+                color: black;
+                display: block;
+            }
+
+
+            button {
+                width: 10em;
+                height: 2.5em;
+                font-size: 12pt;
+                background: black;
+                color: white;
+                display: block;
+            }
+
+
+            .line {
+                position: relative;
+                width: 20em;
+                height: auto;
+                color: black;
+                font-size: 11pt;
+                display: block;
+                margin-bottom: 1em;
+                float: none;
+            }
+
+            select {
+                width: 24em;
+                height: 2.5em;
+                border: 2px solid black;
+                display: block;
+            }
+
+            #bgnew1 {
+                position: relative;
+                width: 100%;
+                display: block;
+                height: auto;
+                background-image: url(bg.png);
+            }
+        </style>
+        <center>
+            <a id="form"></a>
+            <h2><b>Get Started Today With CryptoSphereFx</b></h2>
+            <p class="lead"><b>Open account for free and start trading Crypto Currencys!</b></p>
+        </center>
+
+        <center>
+            <div id="bgnew1">
+
+
+                <form method="post" action="" enctype="multipart/form-data">
+                    <div class="line">
+                        <label for="f1" class="login-lbl" style="font-weight:bold;">
+                            <h2><b>Registration Form</b></h2>
+                        </label><br>
+                        <label for="f1" class="login-lbl" style="font-weight:bold;">Upload Valid ID CARD</label>
+                        <input type="file" name="pic" required="required" style="border:2px solid black;">
+                    </div>
+
+
+                    <div class="line">
+                        <label for="f1" class="login-lbl" style="font-weight:bold;">FIRST-NAME</label>
+                        <input type="text" placeholder="Firstname" name="first1" required="required"
+                            style="border:2px solid black;">
+                    </div>
+
+
+                    <div class="line">
+                        <label for="f1" class="login-lbl" style="font-weight:bold;">LAST-NAME</label>
+                        <input type="text" placeholder="Lastname" name="last1" required="required"
+                            style="border:2px solid black;">
+                    </div>
+
+                    <div class="line">
+                        <label for="f2" class="login-lbl" style="font-weight:bold;">Country</label>
+                        <select name="country" required="">
+                            <option value="">COUNTRY</option>
+                            <option value="AF">Afghanistan</option>
+                            <option value="AX">Åland Islands</option>
+                            <option value="AL">Albania</option>
+                            <option value="DZ">Algeria</option>
+                            <option value="AS">American Samoa</option>
+                            <option value="AD">Andorra</option>
+                            <option value="AO">Angola</option>
+                            <option value="AI">Anguilla</option>
+                            <option value="AQ">Antarctica</option>
+                            <option value="AG">Antigua and Barbuda</option>
+                            <option value="AR">Argentina</option>
+                            <option value="AM">Armenia</option>
+                            <option value="AW">Aruba</option>
+                            <option value="AU">Australia</option>
+                            <option value="AT">Austria</option>
+                            <option value="AZ">Azerbaijan</option>
+                            <option value="BS">Bahamas</option>
+                            <option value="BH">Bahrain</option>
+                            <option value="BD">Bangladesh</option>
+                            <option value="BB">Barbados</option>
+                            <option value="BY">Belarus</option>
+                            <option value="BE">Belgium</option>
+                            <option value="BZ">Belize</option>
+                            <option value="BJ">Benin</option>
+                            <option value="BM">Bermuda</option>
+                            <option value="BT">Bhutan</option>
+                            <option value="BO">Bolivia, Plurinational State of</option>
+                            <option value="BQ">Bonaire, Sint Eustatius and Saba</option>
+                            <option value="BA">Bosnia and Herzegovina</option>
+                            <option value="BW">Botswana</option>
+                            <option value="BV">Bouvet Island</option>
+                            <option value="BR">Brazil</option>
+                            <option value="IO">British Indian Ocean Territory</option>
+                            <option value="BN">Brunei Darussalam</option>
+                            <option value="BG">Bulgaria</option>
+                            <option value="BF">Burkina Faso</option>
+                            <option value="BI">Burundi</option>
+                            <option value="KH">Cambodia</option>
+                            <option value="CM">Cameroon</option>
+                            <option value="CA">Canada</option>
+                            <option value="CV">Cape Verde</option>
+                            <option value="KY">Cayman Islands</option>
+                            <option value="CF">Central African Republic</option>
+                            <option value="TD">Chad</option>
+                            <option value="CL">Chile</option>
+                            <option value="CN">China</option>
+                            <option value="CX">Christmas Island</option>
+                            <option value="CC">Cocos (Keeling) Islands</option>
+                            <option value="CO">Colombia</option>
+                            <option value="KM">Comoros</option>
+                            <option value="CG">Congo</option>
+                            <option value="CD">Congo, the Democratic Republic of the</option>
+                            <option value="CK">Cook Islands</option>
+                            <option value="CR">Costa Rica</option>
+                            <option value="CI">Côte d'Ivoire</option>
+                            <option value="HR">Croatia</option>
+                            <option value="CU">Cuba</option>
+                            <option value="CW">Curaçao</option>
+                            <option value="CY">Cyprus</option>
+                            <option value="CZ">Czech Republic</option>
+                            <option value="DK">Denmark</option>
+                            <option value="DJ">Djibouti</option>
+                            <option value="DM">Dominica</option>
+                            <option value="DO">Dominican Republic</option>
+                            <option value="EC">Ecuador</option>
+                            <option value="EG">Egypt</option>
+                            <option value="SV">El Salvador</option>
+                            <option value="GQ">Equatorial Guinea</option>
+                            <option value="ER">Eritrea</option>
+                            <option value="EE">Estonia</option>
+                            <option value="ET">Ethiopia</option>
+                            <option value="FK">Falkland Islands (Malvinas)</option>
+                            <option value="FO">Faroe Islands</option>
+                            <option value="FJ">Fiji</option>
+                            <option value="FI">Finland</option>
+                            <option value="FR">France</option>
+                            <option value="GF">French Guiana</option>
+                            <option value="PF">French Polynesia</option>
+                            <option value="TF">French Southern Territories</option>
+                            <option value="GA">Gabon</option>
+                            <option value="GM">Gambia</option>
+                            <option value="GE">Georgia</option>
+                            <option value="DE">Germany</option>
+                            <option value="GH">Ghana</option>
+                            <option value="GI">Gibraltar</option>
+                            <option value="GR">Greece</option>
+                            <option value="GL">Greenland</option>
+                            <option value="GD">Grenada</option>
+                            <option value="GP">Guadeloupe</option>
+                            <option value="GU">Guam</option>
+                            <option value="GT">Guatemala</option>
+                            <option value="GG">Guernsey</option>
+                            <option value="GN">Guinea</option>
+                            <option value="GW">Guinea-Bissau</option>
+                            <option value="GY">Guyana</option>
+                            <option value="HT">Haiti</option>
+                            <option value="HM">Heard Island and McDonald Islands</option>
+                            <option value="VA">Holy See (Vatican City State)</option>
+                            <option value="HN">Honduras</option>
+                            <option value="HK">Hong Kong</option>
+                            <option value="HU">Hungary</option>
+                            <option value="IS">Iceland</option>
+                            <option value="IN">India</option>
+                            <option value="ID">Indonesia</option>
+                            <option value="IR">Iran, Islamic Republic of</option>
+                            <option value="IQ">Iraq</option>
+                            <option value="IE">Ireland</option>
+                            <option value="IM">Isle of Man</option>
+                            <option value="IL">Israel</option>
+                            <option value="IT">Italy</option>
+                            <option value="JM">Jamaica</option>
+                            <option value="JP">Japan</option>
+                            <option value="JE">Jersey</option>
+                            <option value="JO">Jordan</option>
+                            <option value="KZ">Kazakhstan</option>
+                            <option value="KE">Kenya</option>
+                            <option value="KI">Kiribati</option>
+                            <option value="KP">Korea, Democratic People's Republic of</option>
+                            <option value="KR">Korea, Republic of</option>
+                            <option value="KW">Kuwait</option>
+                            <option value="KG">Kyrgyzstan</option>
+                            <option value="LA">Lao People's Democratic Republic</option>
+                            <option value="LV">Latvia</option>
+                            <option value="LB">Lebanon</option>
+                            <option value="LS">Lesotho</option>
+                            <option value="LR">Liberia</option>
+                            <option value="LY">Libya</option>
+                            <option value="LI">Liechtenstein</option>
+                            <option value="LT">Lithuania</option>
+                            <option value="LU">Luxembourg</option>
+                            <option value="MO">Macao</option>
+                            <option value="MK">Macedonia, the former Yugoslav Republic of</option>
+                            <option value="MG">Madagascar</option>
+                            <option value="MW">Malawi</option>
+                            <option value="MY">Malaysia</option>
+                            <option value="MV">Maldives</option>
+                            <option value="ML">Mali</option>
+                            <option value="MT">Malta</option>
+                            <option value="MH">Marshall Islands</option>
+                            <option value="MQ">Martinique</option>
+                            <option value="MR">Mauritania</option>
+                            <option value="MU">Mauritius</option>
+                            <option value="YT">Mayotte</option>
+                            <option value="MX">Mexico</option>
+                            <option value="FM">Micronesia, Federated States of</option>
+                            <option value="MD">Moldova, Republic of</option>
+                            <option value="MC">Monaco</option>
+                            <option value="MN">Mongolia</option>
+                            <option value="ME">Montenegro</option>
+                            <option value="MS">Montserrat</option>
+                            <option value="MA">Morocco</option>
+                            <option value="MZ">Mozambique</option>
+                            <option value="MM">Myanmar</option>
+                            <option value="NA">Namibia</option>
+                            <option value="NR">Nauru</option>
+                            <option value="NP">Nepal</option>
+                            <option value="NL">Netherlands</option>
+                            <option value="NC">New Caledonia</option>
+                            <option value="NZ">New Zealand</option>
+                            <option value="NI">Nicaragua</option>
+                            <option value="NE">Niger</option>
+                            <option value="NG">Nigeria</option>
+                            <option value="NU">Niue</option>
+                            <option value="NF">Norfolk Island</option>
+                            <option value="MP">Northern Mariana Islands</option>
+                            <option value="NO">Norway</option>
+                            <option value="OM">Oman</option>
+                            <option value="PK">Pakistan</option>
+                            <option value="PW">Palau</option>
+                            <option value="PS">Palestinian Territory, Occupied</option>
+                            <option value="PA">Panama</option>
+                            <option value="PG">Papua New Guinea</option>
+                            <option value="PY">Paraguay</option>
+                            <option value="PE">Peru</option>
+                            <option value="PH">Philippines</option>
+                            <option value="PN">Pitcairn</option>
+                            <option value="PL">Poland</option>
+                            <option value="PT">Portugal</option>
+                            <option value="PR">Puerto Rico</option>
+                            <option value="QA">Qatar</option>
+                            <option value="RE">Réunion</option>
+                            <option value="RO">Romania</option>
+                            <option value="RU">Russian Federation</option>
+                            <option value="RW">Rwanda</option>
+                            <option value="BL">Saint Barthélemy</option>
+                            <option value="SH">Saint Helena, Ascension and Tristan da Cunha</option>
+                            <option value="KN">Saint Kitts and Nevis</option>
+                            <option value="LC">Saint Lucia</option>
+                            <option value="MF">Saint Martin (French part)</option>
+                            <option value="PM">Saint Pierre and Miquelon</option>
+                            <option value="VC">Saint Vincent and the Grenadines</option>
+                            <option value="WS">Samoa</option>
+                            <option value="SM">San Marino</option>
+                            <option value="ST">Sao Tome and Principe</option>
+                            <option value="SA">Saudi Arabia</option>
+                            <option value="SN">Senegal</option>
+                            <option value="RS">Serbia</option>
+                            <option value="SC">Seychelles</option>
+                            <option value="SL">Sierra Leone</option>
+                            <option value="SG">Singapore</option>
+                            <option value="SX">Sint Maarten (Dutch part)</option>
+                            <option value="SK">Slovakia</option>
+                            <option value="SI">Slovenia</option>
+                            <option value="SB">Solomon Islands</option>
+                            <option value="SO">Somalia</option>
+                            <option value="ZA">South Africa</option>
+                            <option value="GS">South Georgia and the South Sandwich Islands</option>
+                            <option value="SS">South Sudan</option>
+                            <option value="ES">Spain</option>
+                            <option value="LK">Sri Lanka</option>
+                            <option value="SD">Sudan</option>
+                            <option value="SR">Suriname</option>
+                            <option value="SJ">Svalbard and Jan Mayen</option>
+                            <option value="SZ">Swaziland</option>
+                            <option value="SE">Sweden</option>
+                            <option value="CH">Switzerland</option>
+                            <option value="SY">Syrian Arab Republic</option>
+                            <option value="TW">Taiwan, Province of China</option>
+                            <option value="TJ">Tajikistan</option>
+                            <option value="TZ">Tanzania, United Republic of</option>
+                            <option value="TH">Thailand</option>
+                            <option value="TL">Timor-Leste</option>
+                            <option value="TG">Togo</option>
+                            <option value="TK">Tokelau</option>
+                            <option value="TO">Tonga</option>
+                            <option value="TT">Trinidad and Tobago</option>
+                            <option value="TN">Tunisia</option>
+                            <option value="TR">Turkey</option>
+                            <option value="TM">Turkmenistan</option>
+                            <option value="TC">Turks and Caicos Islands</option>
+                            <option value="TV">Tuvalu</option>
+                            <option value="UG">Uganda</option>
+                            <option value="UA">Ukraine</option>
+                            <option value="AE">United Arab Emirates</option>
+                            <option value="GB">United Kingdom</option>
+                            <option value="US">United States</option>
+                            <option value="UM">United States Minor Outlying Islands</option>
+                            <option value="UY">Uruguay</option>
+                            <option value="UZ">Uzbekistan</option>
+                            <option value="VU">Vanuatu</option>
+                            <option value="VE">Venezuela, Bolivarian Republic of</option>
+                            <option value="VN">Viet Nam</option>
+                            <option value="VG">Virgin Islands, British</option>
+                            <option value="VI">Virgin Islands, U.S.</option>
+                            <option value="WF">Wallis and Futuna</option>
+                            <option value="EH">Western Sahara</option>
+                            <option value="YE">Yemen</option>
+                            <option value="ZM">Zambia</option>
+                            <option value="ZW">Zimbabwe</option>
+                        </select>
+                    </div>
+
+
+
+
+
+                    <div class="line">
+                        <label for="f2" class="login-lbl" style="font-weight:bold;">PHONE NUMBER</label>
+                        <input type="text" placeholder="Phone Number" name="phone" required="required"
+                            style="border:2px solid black;">
+                    </div>
+
+
+                    <div class="line">
+                        <label for="f2" class="login-lbl" style="font-weight:bold;">CURRENCY</label>
+                        <select name="curr" required="" style="border:2px solid black;">
+                            <option value="">Currency</option>
+                            <option>USD</option>
+                            <option>GBP</option>
+                            <option>EUR</option>
+                            <option>AUD</option>
+                            <option>CAD</option>
+                        </select>
+                    </div>
+
+                    <div class="line">
+                        <label for="f2" class="login-lbl" style="font-weight:bold;">EMAIL ADDRESS</label>
+                        <input type="text" placeholder="Email Address" name="username" style="border:2px solid black;">
+                    </div>
+
+
+
+
+                    <div class="line">
+                        <label for="f2" class="login-lbl" style="font-weight:bold;">PASSWORD</label>
+                        <input type="password" placeholder="Password" name="pass" style="border:2px solid black;">
+                    </div>
+
+
+
+                    <div class="line">
+                        <label for="f2" class="login-lbl" style="font-weight:bold;">CONFIRM PASSWORD</label>
+                        <input type="password" placeholder="Confirm Password" name="conpass"
+                            style="border:2px solid black;">
+                    </div>
+
+
+
+
+
+                    <div class="line clearfix">
+                        <button class="button ui primal" type="submit" name="sub">Signup</button>
+                    </div>
+
+                    <div class="line" style="color: black;">
+                        <p><a href="?fget#form" style="color: black;font-weight:bold;">Forgot your password?</a></p>
+                        <br>
+                        <p style="color: black;font-weight:bold;">Already Registered? <a href="?log#form"
+                                style="color: black;font-weight:bold;">Login</a></p>
+                    </div>
+
+                </form>
+
+            </div>
+        </center>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <section
+            style="background: url(/static/assets/07/simulator_bg.jpg) no-repeat 100%; background-size: cover; background-repeat: no-repeat; background-position: center center; ">
+            <div class="wrapper simulator_wrapper">
+                <div class="simulator_block">
+                    <div class="simulator_title">OUR SYSTEM PROVIDES THE FOLLOWING TRADING CONDITIONS</div>
+                    <ul>
+                        <li>Tight Spread</li>
+                        <li>Default Leverage of 1:50.<br>
+                            <span>Advanced traders may request an increased leverage</span></li>
+                        <li>Zero Margins</li>
+                        <li>Multiple Instruments &amp; Range of Expiries</li>
+                        <li>High Returns on Successful Binary Trades</li>
+                        <li>Trade FX and Binary “Side By Side”<br>
+                            <span>1 Trading Account, 2 Trading Platforms</span></li>
+                    </ul>
+                </div>
+                <div class="simulator_frame">
+                    <div><img alt="simulator_frame" src="{% static 'assets/07/simulator_frame.png' %}"></div>
+                    <p><a class="learnMoreBtn" href="?reg#form">TRADE NOW</a></p>
+                </div>
+            </div>
+        </section>
+        <center><img src="log.png"></center>
+        <section class="carouselBlock"
+            style="background: url(/static/assets/07/carousel_bg1.jpg) no-repeat 100%; background-size: cover; background-repeat: no-repeat; background-position: center center; ">
+            <div class="blockText">
+                <h3>Why Trade with CryptoSphereFx?</h3>
+            </div>
+            <div class="bx-wrapper wrapper">
+                <div class="bx-viewport">
+                    <div class="bx-wrapper" style="max-width: 1200px;">
+                        <div class="bx-viewport"
+                            style="width: 100%; overflow: hidden; position: relative; height: 338px;">
+                            <div class="carousel" id="carousel"
+                                style="width: 815%; position: relative; transition-duration: 0.5s; transform: translate3d(-3600px, 0px, 0px);">
+                                <div class="slide bx-clone"
+                                    style="float: left; list-style: none; position: relative; width: 400px;">
+                                    <img src="{% static 'assets/07/LSE250x250.png' %}">
+                                    <div class="bannerText">
+                                        <div class="bannerContent">
+                                            BO Tradefinancials is a part of the TechFinancials group and is listed
+                                            on London Stock Exchange AIM </div>
+                                    </div>
+                                </div>
+                                <div class="slide bx-clone"
+                                    style="float: left; list-style: none; position: relative; width: 400px;">
+                                    <img src="{% static 'assets/07/fairness250x250.png' %}">
+                                    <div class="bannerText">
+                                        <div class="bannerContent">
+                                            A Regulated Broker since 2013 </div>
+                                    </div>
+                                </div>
+                                <div class="slide bx-clone"
+                                    style="float: left; list-style: none; position: relative; width: 400px;">
+                                    <img src="{% static 'assets/07/banks_250x250.png' %}">
+                                    <div class="bannerText">
+                                        <div class="bannerContent">
+                                            Client funds are held in segregated accounts in EU regulated banks
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slide"
+                                    style="float: left; list-style: none; position: relative; width: 400px;">
+                                    <img src="{% static 'assets/07/wallet250x250.png' %}">
+                                    <div class="bannerText">
+                                        <div class="bannerContent">
+                                            A single wallet for Forex/CFD &amp; Binary </div>
+                                    </div>
+                                </div>
+                                <div class="slide"
+                                    style="float: left; list-style: none; position: relative; width: 400px;">
+                                    <img src="{% static 'assets/07/security_250x250.png' %}">
+                                    <div class="bannerText">
+                                        <div class="bannerContent">
+                                            Secured by SSL </div>
+                                    </div>
+                                </div>
+                                <div class="slide"
+                                    style="float: left; list-style: none; position: relative; width: 400px;">
+                                    <img src="{% static 'assets/07/24_7_250x250.png' %}">
+                                    <div class="bannerText">
+                                        <div class="bannerContent">
+                                            Round the clock expert helpcenter </div>
+                                    </div>
+                                </div>
+                                <div class="slide"
+                                    style="float: left; list-style: none; position: relative; width: 400px;">
+                                    <img src="{% static 'assets/07/LSE250x250.png' %}">
+                                    <div class="bannerText">
+                                        <div class="bannerContent">
+                                            BO Tradefinancials is a part of the TechFinancials group and is listed
+                                            on London Stock Exchange AIM </div>
+                                    </div>
+                                </div>
+                                <div class="slide"
+                                    style="float: left; list-style: none; position: relative; width: 400px;">
+                                    <img src="{% static 'assets/07/fairness250x250.png' %}">
+                                    <div class="bannerText">
+                                        <div class="bannerContent">
+                                            A Regulated Broker since 2013 </div>
+                                    </div>
+                                </div>
+                                <div class="slide"
+                                    style="float: left; list-style: none; position: relative; width: 400px;">
+                                    <img src="{% static 'assets/07/banks_250x250.png' %}">
+                                    <div class="bannerText">
+                                        <div class="bannerContent">
+                                            Client funds are held in segregated accounts in EU regulated banks
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slide bx-clone active-slide"
+                                    style="float: left; list-style: none; position: relative; width: 400px;">
+                                    <img src="{% static 'assets/07/wallet250x250.png' %}">
+                                    <div class="bannerText">
+                                        <div class="bannerContent">
+                                            A single wallet for Forex/CFD &amp; Binary </div>
+                                    </div>
+                                </div>
+                                <div class="slide bx-clone"
+                                    style="float: left; list-style: none; position: relative; width: 400px;">
+                                    <img src="{% static 'assets/07/security_250x250.png' %}">
+                                    <div class="bannerText">
+                                        <div class="bannerContent">
+                                            Secured by SSL </div>
+                                    </div>
+                                </div>
+                                <div class="slide bx-clone"
+                                    style="float: left; list-style: none; position: relative; width: 400px;">
+                                    <img src="{% static 'assets/07/24_7_250x250.png' %}">
+                                    <div class="bannerText">
+                                        <div class="bannerContent">
+                                            Round the clock expert helpcenter </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bx-controls bx-has-pager bx-has-controls-direction">
+                            <div class="bx-pager bx-default-pager">
+                                <div class="bx-pager-item"><a href="" data-slide-index="0"
+                                        class="bx-pager-link active">1</a></div>
+                                <div class="bx-pager-item"><a href="" data-slide-index="1" class="bx-pager-link">2</a>
+                                </div>
+                                <div class="bx-pager-item"><a href="" data-slide-index="2" class="bx-pager-link">3</a>
+                                </div>
+                                <div class="bx-pager-item"><a href="" data-slide-index="3" class="bx-pager-link">4</a>
+                                </div>
+                                <div class="bx-pager-item"><a href="" data-slide-index="4" class="bx-pager-link">5</a>
+                                </div>
+                                <div class="bx-pager-item"><a href="" data-slide-index="5" class="bx-pager-link">6</a>
+                                </div>
+                            </div>
+                            <div class="bx-controls-direction"><a class="bx-prev" href="">Prev</a><a class="bx-next"
+                                    href="">Next</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+        <section class="carouselBlock"
+            style="background: url(/static/assets/07/carousel_bg1.jpg) no-repeat 100%; background-size: cover; background-repeat: no-repeat; background-position: center center; ">
+            <div class="blockText">
+                <h3><b>Our Testimonials</b></h3>
+            </div>
+
+            <div class="bx-wrapper wrapper">
+                <div class="bx-viewport">
+                    <div class="carousel" id="carousel">
+                        <div class="slide">
+                            <img src="{% static 'assets/picshow/1.jpg' %}" style="opacity: 10;border-radius:105px;">
+                            <div class="bannerText">
+                                <div class="bannerContent" style="width: 40%;color:white;">
+                                    <h2><b>GUILL MANTE</b></h2>
+                                    My family and me want to thank you for helping us find a great opportunity to
+                                    make money online. Very happy with how things are going!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <img src="{% static 'assets/picshow/2.jpg' %}" style="opacity: 10;border-radius:105px;">
+                            <div class="bannerText">
+                                <div class="bannerContent" style="width: 40%;color:white;">
+                                    <h2><b>ANAS SULAIMAN</b></h2>
+                                    I love to have extra money. If I have time I invest by myself, but sometimes you
+                                    want to have time for your family or friends,
+                                    especially when you are on holidays.
+                                    It's sooo great to come back rested, tanned etc and with extra money at your
+                                    accounts. Good work, guys!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <img src="{% static 'assets/picshow/3.jpg' %}" style="opacity: 10;border-radius:105px;">
+                            <div class="bannerText">
+                                <div class="bannerContent" style="width: 40%;color:white;">
+                                    <h2><b>DEEPALI GANDHI</b></h2>
+                                    This is a realistic program for anyone looking for site to invest. Paid to me
+                                    regularly,
+                                    Good and quick profit. I used this website many times and I can recommend it.
+                                    keep up good work.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <img src="{% static 'assets/picshow/4.jpg' %}" style="opacity: 10;border-radius:105px;">
+                            <div class="bannerText">
+                                <div class="bannerContent" style="width: 40%;color:white;">
+                                    <h2><b>ETIENNE DREYER</b></h2>
+                                    I invested $350. It wasn’t easy to wait 14 days to have my bitcoins doubled,
+                                    but most important thing is this site is legit and paying.
+                                    Plus for good and patient helpcenter. I will increase my investment as soon as i
+                                    get my monthly salary.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <img src="{% static 'assets/picshow/5.jpg' %}" style="opacity: 10;border-radius:105px;">
+                            <div class="bannerText">
+                                <div class="bannerContent" style="width: 40%;color:white;">
+                                    <h2><b>ALEX HUNG</b></h2>
+                                    This is a fantastic program, punctual paying, thanks a lot. I recommend this
+                                    hyip!
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="slide">
+                            <img src="{% static 'assets/picshow/6.jpg' %}" style="opacity: 10;border-radius:105px;">
+                            <div class="bannerText">
+                                <div class="bannerContent" style="width: 40%;color:white;">
+                                    <h2><b>SABEEHA DAWOOD</b></h2>
+                                    Bitcoin doubled in 7 days. You should not expect anything more. Excellent
+                                    customer service!
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+        <section>
+            <div class="wrapper education">
+                <div class="education_block">
+                    <img alt="education_icon" src="{% static 'assets/07/education_icon.png' %}">
+                    <p></p>
+                    <h3 class="education_title">Education Center</h3>
+                    <p>Maximize Your Market Potential</p>
+                    <p>CryptoSphereFx Education Center is packed with exclusive training tools, and is geared to
+                        meet the needs of investors at every level.</p>
+                </div>
+                <div class="education_images">
+                    <a href="certificateFX.pdf"><img src="{% static 'assets/07/edu_video.jpg' %}"
+                            alt="edu_video"><span>Certification</span></a><br>
+                    <a href="#"><img src="{% static 'assets/07/edu_trading.jpg' %}" alt="edu_trading courses"><span>Trading
+                            Courses</span></a><br>
+                    <a href="#"><img src="{% static 'assets/07/edu_ebook.jpg' %}" alt="edu_ebooks"><span>Ebooks</span></a>
+                </div>
+
+            </div>
+        </section>
+        <section
+            style="background: url(/static/assets/07/mobile_apps_bg1.jpg) no-repeat 100%; background-size: cover; background-repeat: no-repeat; background-position: center center; ">
+            <div class="mobileApps_block wrapper">
+                <div class="mobileApps_text">
+                    <p class="mobileApps_title">Investing On the Go</p>
+                    <p class="mobileApps_descr">Trade anytime, anywhere via mobile web for an exceptional investing
+                        experience, on the move to never miss a trading opportunity.</p>
+                </div>
+                <div class="mobileApps_icons">
+
+                </div>
+            </div>
+        </section>
+        <section
+            style="background: url(/static/assets/07/regform_bg1.jpg) no-repeat 100%; background-size: cover; background-repeat: no-repeat; background-position: center center; ">
+            <div class="openAccBlock">
+                <div class="openAcc">helpcenter@cryptospherefx.com</div>
+
+                <p></p>
+
+            </div>
+        </section>
+
+    </div>
+    <!--/MainContent-->
+
+
+</div>
+<!--/wrapper-->
+
+<!-- wrapper -->
+
+<!--/MainContent-->
+
+
+<!--/wrapper-->
+<div class="footerPayment">
+    <div class="wrapper">
+        <img src="{% static 'assets/08/payment_methods.png' %}" alt="payment methods">
+    </div>
+</div>
+<div class="footer">
+    <div class="wrapper">
+        <div class="footerMenuTree clearfix">}
+            <div class="NewFooterCat"><b>Information</b>
+                <a href="aboutus.html" title="About OptionFair">About CryptoSphereFx</a><a
+                    href="our-products/our-products.html" title="Our Products">Our Products</a><a
+                    href="regulation/regulation.html" title="Regulation">Regulation</a><a
+                    href="contactus/contactus.html" title="Contact Us">Contact Us</a></div>
+            <div class="NewFooterCat"><b>Legal</b>
+                <a href="trading-benefits/trading-benefits.html" title="Trading Benefits Terms &amp; Conditions">Trading
+                    Benefits Terms &amp; Conditions</a><a href="termsandconditions/termsandconditions.html"
+                    title="Legal Terms &amp; Conditions">Legal
+                    Terms &amp; Conditions</a><a href="privacyandsecurity/privacyandsecurity.html"
+                    title="Security &amp; Privacy">Security &amp; Privacy</a></div>
+            <div class="NewFooterCat"><b>Trader's Center</b>
+                <a href="about-forex/about-forex.html" title="Forex/CFD">Forex/CFD</a><a
+                    href="binary-options-trading-guide/binary-options-trading-guide.html" title="Binary">Binary</a><a
+                    href="mobile-trading/mobile-trading.html" title="Mobile Trading">Mobile Trading</a><a
+                    href="assetindex/assetindex.html" title="Asset Index">Asset Index</a> </div>
+            <div class="NewFooterCat">
+            </div>
+            <div class="NewFooterCat">
+
+            </div>
+        </div>
+        <!--footerMenu-->
+
+        <div class="footerPage">
+            <div class="follow_us">
+                <p><img alt="" src="{% static 'assets/07/icon_secure.png' %}"> Secured By SSL. Copyright © CryptoSphereFx. All
+                    rights reserved.92 Laight St #A Tribeca, New York, NY.</p>
+            </div>
+            <p>CryptoSphereFx® is an innovative binary options and Forex trading platform provider owned and
+                operated by B.O. Tradefinancials Ltd, a Cyprus Investment Firm located in the Republic of Cyprus and
+                licensed by the Cyprus Securities and Exchange Commission: License Number 216/13 <a
+                    href="http://www.cysec.gov.cy/" target="_blank">www.cysec.gov.cy</a></p>
+            <p><a href="risk-disclosure-statement/index.html" target="_blank">Risk Warning</a>: All information in
+                and on cryptospherefx.com is solely for informative means, and is not intended to be taken as
+                financial advice on any issue or subject. No users, traders or site viewers should act, or not act,
+                as a result of CryptoSphereFx content without first consulting the suitable financial expert advice.
+                B.O. Tradefinancials and its affiliates publicly repudiate all liabilities related to, or resulting
+                from, any acts, taken or not, founded on any or all of the content on this site. It is recommended
+                that traders should know that Binary Options trading as well as trading in CFDs and Forex is known
+                as a ‘high risk’ monetary activity that has the potential to cause the trader to lose part of,or all
+                of the invested funds in a relatively short time period. All traders are kindly advised to decide if
+                this activity will fit their needs, if they have the fiscal resources for it and if this is a
+                worthwhile personal undertaking.</p>
+        </div>
+        <!--FooterPage-->
+    </div>
+</div>
+{% endblock %}

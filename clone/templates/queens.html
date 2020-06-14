@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static%}
+{% block content %}
+<div class="container-fluid">
+ <br><br>
+    
+    <div class="isotope_container isotope row masonry-layout bottommargin_20" data-filters=".isotope_filters" style="position: relative; height: 1569px;">
+
+        {% for winner in winners%}
+        <div class="isotope-item col-lg-3 col-md-4 col-sm-6 fashion" style="position: absolute; left: 0%; top: 0px;">
+            <div class="vertical-item content-absolute">
+                <div class="item-media">
+                    <img src="https://storage.googleapis.com/hpc_bucket/{{winner.image}}" alt="">
+                    <div class="media-links">
+                    </div>
+                </div>
+                <div class="item-content text-center before_cover cs">
+                   
+                        <a class="p-link" title="" href="#">{{winner.name}}</a>
+                        <a class="p-link" title="" href="#">{{winner.contestname}}</a>
+                      
+                 
+                   
+                </div>
+            </div>
+        </div>
+
+       {%endfor%}
+       
+    </div>
+
+
+  
+
+</div>
+{% endblock %}

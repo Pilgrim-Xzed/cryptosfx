@@ -1,0 +1,376 @@
+(function($) {
+    var Session = function( loginForm, loginContainer ){
+        var loginHandler = {
+            account: {
+                logged_in: false,
+                userName: '',
+                balance: '',
+                newBalance: '',
+                unreadMessages: '',
+                accountLevelId: '',
+                currencyId:''
+            },
+            currencyValue:{
+                "1": "$",
+                "2": "£",
+                "3": "€",
+                "10": "$",
+                "11": "Fr",
+                "12": "$",
+                "13": "$",
+                "16": "R$",
+                "17": "t",
+                "18": "R",
+                "19": "kr",
+                "21": "Ft",
+                "22": "kr",
+                "23": "R",
+                "24": "Rp",
+                "25": "zl",
+                "26": "Kc"
+            },
+            accountLevel:{
+                "1" : "Regular",
+                "2" : "Gold",
+                "3" : "Platinum",
+                "4" : "Mini",
+                "5" : "Silver",
+                "6" : "Gold",
+                "7" : "Platinum",
+                "8" : "Pro",
+                "9" : "VIP",
+                "10" : "Gold"
+            },
+            selectedLanguage:'en',
+            request: function(method,userID){
+                this.id = "12345688978";
+                this.jsonrpc = "2.0";
+                this.url = '/OptionFair/pages/accountService.json';
+                this.method = method;
+                if ( method == 'getSessionAccount' ){
+                    this.success = loginHandler.loggedIn;
+                }
+                if ( method == 'logout' ){
+                    this.success = loginHandler.logout;
+                }
+                if ( method == 'getAccount' ){
+                    this.success = loginHandler.getBalance;
+                    this.params = [userID];
+                }
+            },
+            runAjax: function(request){
+                $.ajax({
+                    type: "POST",
+                    url: request.url,
+                    data: JSON.stringify(request),
+                    processData: false,
+                    contentType: 'application/json',
+                    dataType: "json",
+                    crossDomain: true,
+                    success: request.success,
+                    error: loginHandler.consoleError
+                })
+            },
+            init: function(){
+                loginHandler.setLanguage();
+                var query = new loginHandler.request('getSessionAccount');
+                loginHandler.runAjax(query);
+            },
+            loggedIn: function(responce){
+                if(responce.result != null){
+                    var userID = responce.result.account.id;
+                    loginHandler.initGetBalance(userID);
+                    loginHandler.account.logged_in = responce.result.account.isLoggedIn;
+                    loginHandler.account.userName = responce.result.account.firstName;
+                    loginHandler.account.balance = responce.result.account.balance.toFixed(2);
+                    loginHandler.account.unreadMessages = responce.result.account.unreadMessages;
+                    loginHandler.account.accountLevelId = loginHandler.accountLevel[responce.result.account.accountLevelId];
+                    loginHandler.account.currencyId = loginHandler.currencyValue[responce.result.account.currencyId];
+                } else {
+                    loginForm.show();
+                }
+
+            },
+            initGetBalance: function(userID){
+                var queryBal = new loginHandler.request('getAccount',userID);
+                loginHandler.runAjax(queryBal);
+            },
+            getBalance: function(responce){
+                var newBalance = responce.result.balance.toString();
+                loginHandler.account.newBalance = newBalance.substring(0,newBalance.length-2)+"."+newBalance.substring(newBalance.length-2);
+                loginHandler.renderHtml();
+                loginHandler.changeButtons();
+            },
+            renderHtml: function(){
+                //console.log(loginHandler.account);
+                var $loginCntr = loginContainer;
+                var $navMenuLoginPanel = $('<div/>').addClass('navigation_menu_login_panel');
+                var $liveChat = $('<div/>').addClass('navigation_menu_live_chat_panel');
+                $('<div/>').addClass('navigation_menu_live_chat_button').text('Live Chat').appendTo($liveChat);
+                var $accountLevel = $('<div/>').addClass('navigation_menu_account_level_panel');
+                $('<div/>').addClass('navigation_menu_account_level_label').text(this.account.accountLevelId.toUpperCase()).appendTo($accountLevel);
+                var $messages = $('<div/>').addClass('navigation_menu_messages_panel');
+                $('<a/>').addClass('navigation_menu_messages_link').attr('href', '/app/#MessagesPage').text(this.config.messages[this.selectedLanguage]+ ' (' + loginHandler.account.unreadMessages + ')').appendTo($messages);
+                var $helloUser = $('<div/>').addClass('navigation_menu_hello_panel');
+                $('<div/>').addClass('navigation_menu_hello_label').text(this.config.helloObj[this.selectedLanguage] + " ").appendTo($helloUser);
+                $('<div/>').addClass('navigation_menu_hello_value').text(loginHandler.account.userName).appendTo($helloUser);
+                var $balance = $('<div/>').addClass('navigation_menu_balance_panel');
+                $('<div/>').addClass('gwt-HTML').text(loginHandler.account.currencyId + loginHandler.account.newBalance).appendTo($balance);
+                var $depositButtonCntr = $('<div/>').addClass('navigation_menu_deposit_panel');
+                $('<a/>').addClass('navigation_menu_deposit_button').attr('href', '/OptionFair/#Deposit').text(this.config.depositObj[this.selectedLanguage]).appendTo($depositButtonCntr);
+
+                $navMenuLoginPanel.append($liveChat)
+                    .append($accountLevel)
+                    .append($messages)
+                    .append($helloUser)
+                    .append($balance)
+                    .append($depositButtonCntr);
+                $loginCntr.append($navMenuLoginPanel);
+
+                loginHandler.renderAccountPopup();
+            },
+            renderAccountPopup: function(){
+                $('body').append('<div class="account_menu_popup"><div class="popupContent"><div class="account_menu_popup_layout"><div class="account_menu_popup_arrow"></div><div class="account_menu_links_panel"><a class="account_menu_link account_menu_account_details_link" href="/app/#AccountDetails"></a><a class="account_menu_link account_menu_change_password_link" href="/app/#ChangePassword"></a></div><div class="account_menu_logout_button_panel"><div class="account_menu_logout_button"></div></div></div></div></div>');
+
+                var $accountDetails =$('<i></i>').text(this.config.popUpTrans.account[this.selectedLanguage]);
+                $('.account_menu_account_details_link').append($accountDetails);
+
+                var $changePassword =$('<i></i>').text(this.config.popUpTrans.passwordCahnge[this.selectedLanguage]);
+                $('.account_menu_change_password_link').append($changePassword);
+
+                var $logout =$('<i></i>').text(this.config.popUpTrans.logout[this.selectedLanguage]);
+                $('.account_menu_logout_button').append($logout);
+
+                loginHandler.addEventsListener();
+            },
+            addEventsListener: function(){
+                $(document).on('click', '.account_menu_logout_button', function(){ // user logout
+                    var query = new loginHandler.request('logout');
+                    loginHandler.runAjax(query);
+                    $('.navigation_menu_login_panel').hide();
+                    $('.account_menu_popup').hide();
+                    loginForm.show();
+                });
+
+                $(document).mouseup(function(e){ // toggle account menu
+                    var $accountPopupMenu = $(".account_menu_popup");
+                    var $accountMenu = $(".navigation_menu_hello_panel");
+
+                    if($accountPopupMenu.is(e.target) // click on popup menu
+                        || $accountPopupMenu.has(e.target).length !== 0 ) {
+                        return false;
+                    }
+                    if($accountMenu.is(e.target) // click on account menu
+                        || $accountMenu.has(e.target).length !== 0 ) {
+                        var accountMenuPosition = $accountMenu.offset();
+                        $accountPopupMenu.css({"left":accountMenuPosition.left, "top":accountMenuPosition.top+20 });
+                        $accountPopupMenu.toggle();
+                    }
+                    else {
+                        $accountPopupMenu.hide();
+                    }
+                });
+
+                $(document).on('click', ".navigation_menu_live_chat_button", function(){ //open LiveChat
+                    window.open("https://v2.zopim.com/widget/livechat.html?key=3RK2NoK1JFUArfrvzmdGsQEPWLKfeemC&mid=XXf4rsOLkCS3Cf&lang=fr&hostname=www.brand-name.com&api_calls=[[%22setStatus%22%2C[null]]%2C[%22setStatus%22%2C[null]]]", 'MyWindow', 'toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no,width=500,height=450');
+                });
+            },
+            logout: function(){
+                console.log('User logged out');
+            },
+            consoleError: function(error){
+                loginForm.show();
+                console.log(error)
+            },
+            setLanguage: function(){
+                var fromUrl = /\/ar|\/da|\/de|\/ko|\/en|\/es|\/fr|\/it|\/ja|\/jp|\/lp_ja|\/ru|\/cn|\/ch|\/zh|\/zh-hans|\/id|\/hi|\/ms|\/my|\/pt|\/pt-br|\/ly|\/ro|\/sv|\/tr/gi;
+                if (document.getElementsByTagName('html')[0].getAttribute('lang') === null) {
+                    var url = window.location.pathname;
+                    var result = fromUrl.test(url);
+                    if (result){
+                        var subStr = url.match(fromUrl);
+                        loginHandler.selectedLanguage = subStr[0].substring(1, 3).toLowerCase();
+                    }
+                }
+                else {
+                    loginHandler.selectedLanguage = document.getElementsByTagName('html')[0].getAttribute('lang').substr(0, 2).toLowerCase();
+                }
+                this.config = {
+                    helloObj: {
+                        ar: 'مرحبا بك',
+                        da: 'Hej',
+                        de: 'Hallo',
+                        es: 'Hola',
+                        en: 'Hello',
+                        it: 'Ciao',
+                        fr: 'Bonjour',
+                        tr: 'Merhaba',
+                        ja: 'こんにちは',
+                        ru: 'Привет',
+                        fi: 'Hei',
+                        nb: 'Hei',
+                        zh: '您好',
+                        sv: 'Hej',
+                        id: 'Hello',
+                        lv: 'Sveiki',
+                        ro: 'Salut',
+                        ko: '안녕하세요',
+                        pt: 'Olá',
+                        el: 'Γεια σας'
+                    },
+                    messages: {
+                        ar: 'Messages',
+                        da: 'Messages',
+                        de: 'Nachrichten',
+                        es: 'Mensajes',
+                        en: 'Messages',
+                        it: 'Messaggi',
+                        fr: 'Messages',
+                        tr: 'Messages',
+                        ja: 'Messages',
+                        ru: 'Сообщения',
+                        fi: 'Messages',
+                        nb: 'Messages',
+                        zh: 'Messages',
+                        sv: 'Messages',
+                        id: 'Messages',
+                        lv: 'Messages',
+                        ro: 'Messages',
+                        ko: 'Messages',
+                        pt: 'Messages',
+                        el: 'Messages'
+                    },
+                    depositObj: {
+                        ar: 'مبلغ الايداع',
+                        pt: 'Depósito',
+                        da: 'Indskud',
+                        de: 'Einzahlung',
+                        es: 'Depositar',
+                        en: 'Deposit',
+                        it: 'Deposita',
+                        fr: 'Dépôt',
+                        tr: 'Para Yatırma',
+                        ja: '入金',
+                        ru: 'Пополнить Счет',
+                        fi: 'Talletus',
+                        nb: 'Innskudd',
+                        zh: '存款',
+                        sv: 'Insättning',
+                        id: 'Setoran',
+                        lv: 'Depozīts',
+                        ro: 'Depozit',
+                        ko: '예치',
+                        el: 'Κατάθεση'
+                    },
+                    popUpTrans: {
+                        account: {
+                            ar: 'تفاصيل الحساب',
+                            da: 'Kontooplysninger',
+                            pt: 'Detalhes da conta',
+                            de: 'Kontodetails',
+                            es: 'Datos de la cuenta',
+                            en: 'Account Details',
+                            it: 'Dettagli Account',
+                            fr: 'Détails du compte',
+                            tr: 'Hesap Bilgileri',
+                            ja: '口座詳細',
+                            ru: 'Реквизиты счета',
+                            fi: 'Tilitiedot',
+                            nb: 'Kontoinformasjon',
+                            zh: '账户信息',
+                            sv: 'Kontouppgifter',
+                            id: 'Detail Akun',
+                            lv: 'Konta informācija',
+                            ro: 'Detaliile Contului',
+                            ko: '계좌 세부 정보',
+                            el: 'Λεπτομέρειες Λογαριασμού'
+                        },
+                        passwordCahnge: {
+                            ar: 'تغير كلمة المرور',
+                            pt: 'Alterar senha',
+                            da: 'Skift adgangskode',
+                            de: 'Kennwort ändern',
+                            es: 'Cambiar contraseña',
+                            en: 'Change Password',
+                            it: 'Cambia la Password',
+                            fr: 'Changer le mot de passe',
+                            tr: 'Şifre Değiştir',
+                            ja: 'パスワード変更',
+                            ru: 'Сменить пароль',
+                            fi: 'Muuta salasana',
+                            nb: 'Endre passord',
+                            zh: '更改密码',
+                            sv: 'Ändra lösenord',
+                            id: 'Change Password',
+                            lv: 'Mainīt paroli',
+                            ro: 'Schimbati Parola',
+                            ko: '암호 변경',
+                            el: 'Αλλαγή Κωδικού Χρήστη'
+                        },
+                        logout: {
+                            ar: 'الخروج >>',
+                            da: 'Log ud',
+                            pt: 'Sair',
+                            de: 'Abmelden >>',
+                            es: 'Cerrar sesión',
+                            en: 'Logout',
+                            it: 'Disconnetti',
+                            fr: 'Déconnexion',
+                            tr: 'Çıkış Yapın',
+                            ja: 'ログアウト',
+                            ru: 'Выйти',
+                            fi: 'Kirjaudu ulos',
+                            nb: 'Logge ut',
+                            zh: '退出>>',
+                            sv: 'Logga ut',
+                            id: 'Logout >>',
+                            lv: 'Atslēgties',
+                            ro: 'Iesire >>',
+                            ko: '로그아웃',
+                            el: 'Κατάθεση'
+                        }
+                    }
+                };
+            },
+            changeButtons: function () {
+                /* Customisation: hide Open account buttons and show Deposit */
+                var buttonName = jQuery('.navigation_menu_deposit_button').text();
+                var buttonLink = jQuery('.navigation_menu_deposit_button').attr('href');
+                if(buttonName.length > 1){
+                    jQuery('.navigation_menu_deposit_button').hide();
+                    jQuery('.login_btn').hide();
+                    jQuery('.openAccBtn').text(buttonName);
+                    jQuery('.openAccBtn').attr('href', buttonLink);
+                    jQuery('.openAccount_btn').text(buttonName);
+                    jQuery('.openAccount_btn').attr('href', buttonLink);
+                    Cookies.set('noti', 'closed', { expires: 365 });
+                }
+            },
+
+        };
+        loginHandler.init();
+
+        return loginHandler;
+    };
+
+
+// Select login panel container
+    var jspFormLogin = $(".form_login"); // Login Form at JSP pages
+    var wpFormLogin = $(".customForm"); // Login Form at WP pages
+    if( jspFormLogin.length ) {
+        var loginForm = jspFormLogin;
+        var loginContainer = $('.loginDiv'); // Form container at JSP pages
+    }
+    else if ( wpFormLogin.length ) {
+        loginForm = wpFormLogin;
+        loginContainer = $('#form_wrapper'); // Form container at WP pages
+
+
+    }
+    var visit = new Session( loginForm, loginContainer );
+
+
+
+
+
+})(jQuery);
