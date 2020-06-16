@@ -72,13 +72,13 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'cryptohack.wsgi.application'
 
-LOGIN_REDIRECT_URL = 'home'
-LOGOUT_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = ''
+LOGOUT_REDIRECT_URL = ''
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST = 'smtp.migadu.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'Slammad'
+EMAIL_HOST_USER = 'helpbox@coinwintrade.com'
 EMAIL_HOST_PASSWORD = 'Slammad42'
 EMAIL_USE_TLS = True
 

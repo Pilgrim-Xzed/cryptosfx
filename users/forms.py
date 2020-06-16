@@ -4,8 +4,9 @@ from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from .models import CustomUser
 from django.core.mail import EmailMultiAlternatives
 from django.template import Context
+from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
-
+from django.utils.html import strip_tags
 
 class CustomUserCreationForm(UserCreationForm):
     def __init__(self, *args, **kwargs):
@@ -24,15 +25,14 @@ class CustomUserCreationForm(UserCreationForm):
                                                                                                       'type': 'password',
                                                                                                       'required': 'true', }), }
     def send_email(self):
+        subject, from_email, to = 'New User Registration', 'helpbox@coinwintrade.com', self.cleaned_data.get("email")
         c = {'username':self.cleaned_data.get("first_name") + ' ' + self.cleaned_data.get("last_name"),'email':self.cleaned_data.get('email'),'password':self.cleaned_data.get('password1') }  
-        text_content = render_to_string('email.txt', c)
-        html_content = render_to_string('email.html', c)
-
-        email = EmailMultiAlternatives('New User Registration', text_content)
-        email.attach_alternative(html_content, "text/html")
-        email.from_email ="helpcenter@coinwintrade.com"
-        email.to = [self.cleaned_data.get("email")]
-        email.send()
+        html_content = render_to_string('email.html', c) # render with dynamic value
+        text_content = strip_tags(html_content) # Strip the html tag. So people can see the pure text at least.
+        
+        msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
+        msg.attach_alternative(html_content, "text/html")
+        msg.send()
         pass    
 
 
