@@ -5,7 +5,10 @@ from .models import CustomUser
 
 
 class CustomUserCreationForm(UserCreationForm):
-
+    def __init__(self, *args, **kwargs):
+        super(CustomUserCreationForm, self).__init__(*args, **kwargs)
+        self.fields['username'].widget.attrs.pop("autofocus", None)
+        
     class Meta:
         model = CustomUser
         fields = ('username', 'email', 'first_name', 'last_name',
@@ -15,8 +18,10 @@ class CustomUserCreationForm(UserCreationForm):
             attrs={'class': 'blackme', 'placeholder': 'Phone Number'}), 'email': TextInput(
             attrs={'class': 'blackme', 'placeholder': 'Email'}),  'username': TextInput(
             attrs={'class': 'blackme', 'placeholder': 'Username'}), 'password1': PasswordInput(attrs={'id': 'blackme',
-                                      'type': 'password',
-                                      'required': 'true',}), }
+                                                                                                      'type': 'password',
+                                                                                                      'required': 'true', }), }
+
+      
 
 
 class CustomUserChangeForm(UserChangeForm):
