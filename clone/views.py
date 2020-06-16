@@ -7,3 +7,21 @@ class Index(CreateView):
     form_class = CustomUserCreationForm
     success_url = reverse_lazy('login')
     template_name = 'index.html'
+
+
+
+def about(request):
+    return render(request, 'about.html',{})
+
+
+def trade(request):
+    return render(request, 'forex.html',{})
+
+
+def education(request):
+    return render(request, 'education.html',{})
+
+
+
+def legal(request):
+    return render(request, 'legal.html',{})
