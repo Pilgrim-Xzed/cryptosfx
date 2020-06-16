@@ -76,6 +76,11 @@ LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'Slammad'
+EMAIL_HOST_PASSWORD = 'Slammad42'
+EMAIL_USE_TLS = True
 
 DATABASES = {
     'default': {

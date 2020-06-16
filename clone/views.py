@@ -9,6 +9,11 @@ class Index(CreateView):
     template_name = 'index.html'
 
 
+    def form_valid(self, form):
+        form.send_email()
+        return super().form_valid(form)
+
+
 
 def about(request):
     return render(request, 'about.html',{})
