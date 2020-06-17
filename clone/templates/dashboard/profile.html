@@ -1,0 +1,27 @@
+{% extends 'dashboard_base.html' %}
+
+{% load static%}
+{% block content %}
+<center>
+    <form method="post">
+    <p>Registered User Information</p>
+    
+    <div class="foo"><p>First Name</p></div>
+    <div class="foo"><input type="text" readonly="readonly" placeholder="Saidu"></div>
+    
+    <div class="foo"><p>Last Name</p></div>
+    <div class="foo"><input type="text" readonly="readonly" placeholder="Bello"></div>
+    
+    <div class="foo"><p>Phone Number</p></div>
+    <div class="foo"><input type="text" readonly="readonly" placeholder="09094815738"></div>
+    
+    <div class="foo"><p>Email Address</p></div>
+    <div class="foo"><input type="text" readonly="readonly" placeholder="saeedbello12@gmail.com"></div>
+    
+    <div class="foo"><p>Country of Residense</p></div>
+    <div class="foo"><input type="text" readonly="readonly" placeholder="LV"></div>
+    <br>
+    <div class="foo"><button>Contact Support for Data Reform</button></div>
+    </form>
+    </center>
+{% endblock %}

@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'users',
-    'clone'
+    'clone',
+    'dashboard'
 ]
 AUTH_USER_MODEL = 'users.CustomUser' # new
 
@@ -72,7 +73,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'cryptohack.wsgi.application'
 
-LOGIN_REDIRECT_URL = ''
+LOGIN_REDIRECT_URL = '/dashboard'
 LOGOUT_REDIRECT_URL = ''
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
@@ -82,6 +83,8 @@ EMAIL_HOST_USER = 'helpbox@coinwintrade.com'
 EMAIL_HOST_PASSWORD = 'Slammad42'
 EMAIL_USE_TLS = True
 
+
+DEFAULT_FROM_EMAIL = 'helpbox@coinwintrade.com'
 DATABASES = {
     'default': {
         # If you are using Cloud SQL for MySQL rather than PostgreSQL, set

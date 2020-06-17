@@ -1,0 +1,42 @@
+{% extends 'dashboard_base.html' %}
+
+{% load static%}
+{% block content %}
+<div id="otherpages">
+    <a id="dep"></a>
+    <center>
+    <p>Deposit Request Form</p>
+    
+    <center>
+    </center>
+    <form method="post">
+    <div class="foo"><p>Currency</p></div>
+    <div class="foo">
+    <select name="curr" required="">
+    <option value="">Select Option</option>
+    <option>British Pounds (GBD)</option>
+    <option>Euro (EUR)</option>
+    <option>US Dollars (USD)</option>
+    <option>Others</option>
+    </select>
+    </div>
+    
+    <div class="foo"><p>Payment Method</p></div>
+    <div class="foo">
+    <select name="meth" required="">
+    <option value="">Select Option</option>
+    <option>Bank Deposit</option>
+    <option>Western Union</option>
+    <option>Money Gram</option>
+    <option>Crypto Currency</option>
+    <option>Foreign Currency Exchanger</option>
+    </select>
+    </div>
+    
+    <div class="foo"><p>Input Deposit Amount</p></div>
+    <div class="foo"><input type="number" name="amtdept" required="required"></div>
+    <div class="foo"><button type="submit" name="depp">Deposit</button></div>
+    </form>
+    </center>
+    </div><br><br>
+{% endblock %}

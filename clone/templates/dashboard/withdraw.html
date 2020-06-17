@@ -1,0 +1,22 @@
+{% extends 'dashboard_base.html' %}
+
+{% load static%}
+{% block content %}
+<div id="otherpages" style="margin-right: 20px;">
+    <a id="wit"></a>
+    <center>
+    <form method="post">
+    <p>Your Available Balance for Withdraw is: </p>
+    <div class="foo"><p>Select Withdraw Means</p></div>
+    <div class="foo">
+    <select name="withdraw">
+    <option>Bank Withdraw</option>
+    <option>Crypto Currency</option>
+    </select>
+    </div>
+    <div class="foo"><input type="number" name="amt" placeholder="Desired Withdrawal Amount"></div>
+    <div class="foo"><button type="submit" name="witbut">Request Withdrawal</button></div>
+    </form>
+    </center>
+    </div>
+{% endblock %}

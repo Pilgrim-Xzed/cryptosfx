@@ -1,0 +1,23 @@
+{% extends 'dashboard_base.html' %}
+
+{% load static%}
+{% block content %}
+<br><br>
+
+
+<br><br>
+    <center>
+        <h3 style="color: black;">Investment Plan &amp; Profit</h3>
+        <div class="foo">
+        <select name="curr" required="" onchange="location=this.value;">
+        <option value="">Select Plan to Proceed</option>
+        <option value="?plan=grade1#plan">Grade (1)</option>
+        <option value="?plan=grade2#plan">Grade (2)</option>
+        <option value="?plan=grade3#plan">Grade (3)</option>
+        <option value="?plan=grade4#plan">Grade (4)</option>
+        <option value="?plan=grade5#plan">Grade (5)</option>
+        </select>
+        </div>
+        
+        </center>
+{% endblock %}
