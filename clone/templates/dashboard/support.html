@@ -1,0 +1,19 @@
+{% extends 'dashboard_base.html' %}
+
+{% load static%}
+{% block content %}
+<a id="sup"></a>
+<center>
+    <form method="post">
+    <p>Email @ helpcenter@cryptospherefx.com or Write us via our contact us form below:</p>
+    
+    <div class="foo"><p>Enter Subject</p></div>
+    <div class="foo"><input type="text" name="sub"></div>
+    
+    <div class="foo"><p>Enter Message</p></div>
+    <div class="foo" style="height: auto;"><textarea name="message"></textarea></div>
+    <br>
+    <div class="foo"><button type="submit" name="cont">Send</button></div>
+    </form>
+    </center>
+{% endblock %}
