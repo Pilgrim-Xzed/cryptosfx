@@ -52,10 +52,10 @@ $("#nav").toggle();
 
 <div id="cover">
 <div id="mainnav">
-<div id="navcove"><div id="navbar"></div></div>
+<div id="navcove"><div id="navbar" style="background-image: url('https://storage.googleapis.com/crypto_static/assets/menu.png');"></div></div>
 <div id="nav">
 <center>
-<div id="leftmenu"><div id="textt3"><center><i class='fas fa-home'></i><div id="logoimg"><img src="logo.png"/></div></center></div></div>
+<div id="leftmenu"><div id="textt3"><center><i class='fas fa-home'></i><div id="logoimg"><img src="{% static 'assets/images/regel1.png' %}"/></div></center></div></div>
 </center>
 <br />
 <hr />
@@ -114,7 +114,7 @@ $("#nav").toggle();
 </div>
 <!-- TradingView Widget END --></div>
 <center>
-<div id="leftmenu"style="color: black;">Dashboard<br /><i class='fas fa-user-alt'></i>&nbsp;Welcome Saidu&nbsp;Bello</div>
+<div id="leftmenu"style="color: black;">Dashboard<br /><i class='fas fa-user-alt'></i>&nbsp;Welcome {{user.first_name}} {{user.last_name}}</div>
 </center>
 
 
