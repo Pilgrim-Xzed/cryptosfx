@@ -1,5 +1,5 @@
 from django.urls import path, include
-from .views import Index, about, trade, education, legal, Success, login, contactus,asset_index
+from .views import Index, about, trade, education, legal, Success, login, contactus,asset_index, terms, benefits
 from django.conf.urls.static import static
 from django.conf import settings
 from django.conf.urls import url
@@ -30,6 +30,8 @@ urlpatterns = [
     path('legal/', legal, name="legal"),
     path('contactus/', contactus, name="contact"),
     path('asset_index/', asset_index, name="asset"),
+    path('terms/', terms, name="terms"),
+    path('benefits/', benefits, name="benefits"),
 
 
 

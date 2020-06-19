@@ -87,3 +87,9 @@ def contactus(request):
 
 def asset_index(request):
     return render(request, 'asset.html',{})
+
+def terms(request):
+    return render(request, 'terms.html',{})
+
+def benefits(request):
+    return render(request, 'benefits.html',{})

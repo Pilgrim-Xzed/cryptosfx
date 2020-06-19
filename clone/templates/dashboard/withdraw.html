@@ -2,10 +2,14 @@
 
 {% load static%}
 {% block content %}
-
+<script>
+    function withdraw(){
+        alert("Your Request has been sent successful, kindly await response from us soon. Thank You")
+    }
+</script>
     <a id="wit"></a>
     <center>
-    <form method="post">
+    
     <p>Your Available Balance for Withdraw is: </p>
     <div class="foo"><p>Select Withdraw Means</p></div>
     <div class="foo">
@@ -15,8 +19,8 @@
     </select>
     </div>
     <div class="foo"><input type="number" name="amt" placeholder="Desired Withdrawal Amount"></div>
-    <div class="foo"><button type="submit" name="witbut">Request Withdrawal</button></div>
-    </form>
+    <div class="foo"><button type="submit"  onclick="withdraw()">Request Withdrawal</button></div>
+    
     </center>
   
 {% endblock %}

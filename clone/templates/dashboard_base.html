@@ -66,9 +66,12 @@ $("#nav").toggle();
 <div id="mainnav">
 <div id="navcove"><div id="navbar" style="background-image: url('https://storage.googleapis.com/crypto_static/assets/menu.png');"></div></div>
 <div id="nav">
+ <a href="" >
 <center>
 <div id="leftmenu"><div id="textt3"><center><i class='fas fa-home'></i><div id="logoimg"><img src="{% static 'assets/images/regel1.png' %}"/></div></center></div></div>
 </center>
+</a>
+
 <br />
 <hr />
 <div id="leftmenu"><div id="textt">&nbsp;&nbsp;&nbsp;&nbsp;<a href="/dashboard/?trad"><i class="fa fa-area-chart"></i></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>TRADE</b></a></div>
@@ -212,7 +215,7 @@ $("#nav").toggle();
 
 <div id="trade">
 <center>
-<img src="loader.gif"/>
+<img src="{% static 'assets/images/07/loader.gif' %}"/>
 <div id="posi2"><p><font color="black"><i class='fas fa-user-alt'></i></font><br /><font color="blue">Caution:</font> Your Trading Account is a Special Account so avoid Trading for Yourself and note that your account are been managed by our Assigned Account Managers</p><br /></div>
  </center>
  <br /><hr /> 
