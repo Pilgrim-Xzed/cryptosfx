@@ -4,20 +4,44 @@
 {% block content %}
 <br><br>
 
+<script>
+   function handleSelectChange(event) {
 
+var selectElement = event.target;
+var value = selectElement.value;
+if (value == 1) {
+            document.getElementById("plan").innerHTML = `<div class="plan"><br><font color="black"><b>Grade (1)</b></font><br>Price: $200<br>Profit: $1,050<br>Duration: 7Days</font><a href="/dashboard/deposit"><button>Join Now</button></a></div>`
+        } else if (value == 2) {
+            document.getElementById("plan").innerHTML = `<div class="plan"><br><font color="black"><b>Grade (2)</b></font><br>Price: $250<br>Profit: $1,250<br>Duration: 7Days</font><a href="/dashboard/deposit"><button>Join Now</button></a></div>`
+        } else if (value == 3) {
+            document.getElementById("plan").innerHTML = `<div class="plan"><br><font color="black"><b>Grade (3)</b></font><br>Price: $500<br>Profit: $2,030.22<br>Duration: 7Days</font><a href="/dashboard/deposit"><button>Join Now</button></a></div>`
+        } else if (value == 4) {
+            document.getElementById("plan").innerHTML = `<div class="plan"><br><font color="black"><b>Grade (4)</b></font><br>Price: $1000<br>Profit: $3,550<br>Duration: 1Week</font><a href="/dashboard/deposit"><button>Join Now</button></a></div>`
+        } else if (value == 5) {
+            document.getElementById("plan").innerHTML = `<div class="plan"><br><font color="black"><b>Grade (5)</b></font><br>Price: $5000<br>Profit: $8,000.79<br>Duration: 2Weeks</font><a href="/dashboard/deposit"><button>Join Now</button></a></div>`
+        } else {
+            document.getElementById("plan").innerHTML = `<p></p>`
+        }
+}
+ 
+ 
+</script>
 <br><br>
-    <center>
-        <h3 style="color: black;">Investment Plan &amp; Profit</h3>
-        <div class="foo">
-        <select name="curr" required="" onchange="location=this.value;">
-        <option value="">Select Plan to Proceed</option>
-        <option value="?plan=grade1#plan">Grade (1)</option>
-        <option value="?plan=grade2#plan">Grade (2)</option>
-        <option value="?plan=grade3#plan">Grade (3)</option>
-        <option value="?plan=grade4#plan">Grade (4)</option>
-        <option value="?plan=grade5#plan">Grade (5)</option>
+<center>
+    <div id="plan">
+
+    </div>
+    <h3 style="color: white;">Investment Plan &amp; Profit</h3><br>
+    <div class="foo">
+        <select onchange="handleSelectChange(event)" >
+            <option value="0">Select Plan to Proceed</option>
+            <option value="1">Grade (1)</option>
+            <option value="2">Grade (2)</option>
+            <option value="3">Grade (3)</option>
+            <option value="4">Grade (4)</option>
+            <option value="5">Grade (5)</option>
         </select>
-        </div>
-        
-        </center>
+    </div>
+
+</center>
 {% endblock %}
