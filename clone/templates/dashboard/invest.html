@@ -10,15 +10,15 @@
 var selectElement = event.target;
 var value = selectElement.value;
 if (value == 1) {
-            document.getElementById("plan").innerHTML = `<div class="plan"><br><font color="black"><b>Grade (1)</b></font><br>Price: $200<br>Profit: $1,050<br>Duration: 7Days</font><a href="/dashboard/deposit"><button>Join Now</button></a></div>`
+            document.getElementById("plan").innerHTML = `<div class="plan"><br><font color="black"><b>Grade (1)</b></font><br>Price: $200<br>Profit: $1,050<br>Duration: 7Days</font><a href="/dashboard/deposit/?amount=200&dep#dep"><button>Join Now</button></a></div>`
         } else if (value == 2) {
-            document.getElementById("plan").innerHTML = `<div class="plan"><br><font color="black"><b>Grade (2)</b></font><br>Price: $250<br>Profit: $1,250<br>Duration: 7Days</font><a href="/dashboard/deposit"><button>Join Now</button></a></div>`
+            document.getElementById("plan").innerHTML = `<div class="plan"><br><font color="black"><b>Grade (2)</b></font><br>Price: $250<br>Profit: $1,250<br>Duration: 7Days</font><a href="/dashboard/deposit/?amount=250&dep#dep"><button>Join Now</button></a></div>`
         } else if (value == 3) {
-            document.getElementById("plan").innerHTML = `<div class="plan"><br><font color="black"><b>Grade (3)</b></font><br>Price: $500<br>Profit: $2,030.22<br>Duration: 7Days</font><a href="/dashboard/deposit"><button>Join Now</button></a></div>`
+            document.getElementById("plan").innerHTML = `<div class="plan"><br><font color="black"><b>Grade (3)</b></font><br>Price: $500<br>Profit: $2,030.22<br>Duration: 7Days</font><a href="/dashboard/deposit/?amount=500&dep#dep"><button>Join Now</button></a></div>`
         } else if (value == 4) {
-            document.getElementById("plan").innerHTML = `<div class="plan"><br><font color="black"><b>Grade (4)</b></font><br>Price: $1000<br>Profit: $3,550<br>Duration: 1Week</font><a href="/dashboard/deposit"><button>Join Now</button></a></div>`
+            document.getElementById("plan").innerHTML = `<div class="plan"><br><font color="black"><b>Grade (4)</b></font><br>Price: $1000<br>Profit: $3,550<br>Duration: 1Week</font><a href="/dashboard/deposit/?amount=1000&dep#dep"><button>Join Now</button></a></div>`
         } else if (value == 5) {
-            document.getElementById("plan").innerHTML = `<div class="plan"><br><font color="black"><b>Grade (5)</b></font><br>Price: $5000<br>Profit: $8,000.79<br>Duration: 2Weeks</font><a href="/dashboard/deposit"><button>Join Now</button></a></div>`
+            document.getElementById("plan").innerHTML = `<div class="plan"><br><font color="black"><b>Grade (5)</b></font><br>Price: $5000<br>Profit: $8,000.79<br>Duration: 2Weeks</font><a href="/dashboard/deposit/?amount=5000&dep#dep"><button>Join Now</button></a></div>`
         } else {
             document.getElementById("plan").innerHTML = `<p></p>`
         }

@@ -34,11 +34,10 @@ class WithdrawView(CreateView):
     template_name = 'dashboard/withdraw.html'
 
 
-class DepositView(CreateView):
+def deposit(request):
     model = User
-    form_class = ProfileForm
-    success_url = reverse_lazy('home')
-    template_name = 'dashboard/deposit.html'
+    amount = request.GET.get('amount')
+    return render(request, 'dashboard/deposit.html',{"amount":amount})
 
 
 class EcalenderView(CreateView):

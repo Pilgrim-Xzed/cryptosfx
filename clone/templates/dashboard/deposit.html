@@ -2,7 +2,27 @@
 
 {% load static%}
 {% block content %}
-
+<script>
+    var notChangedStepsCount = 0;
+var scrollInterval = setInterval(function() {
+    var element = document.querySelector(".xero");
+    if (element) { 
+        // element found
+        clearInterval(scrollInterval);
+        element.scrollIntoView();
+    } else if((document.documentElement.scrollTop + window.innerHeight) != document.documentElement.scrollHeight) { 
+        // no element -> scrolling
+        notChangedStepsCount = 0;
+        document.documentElement.scrollTop = document.documentElement.scrollHeight;
+    } else if (notChangedStepsCount > 20) { 
+        // no more space to scroll
+        clearInterval(scrollInterval);
+    } else {
+        // waiting for possible extension (autoload) of the page
+        notChangedStepsCount++;
+    }
+}, 50);
+</script>
     <a id="dep"></a>
    
     <center>
@@ -13,6 +33,7 @@
     <center>
     </center>
     <script>
+ 
        function getpop() {
     d = document.getElementById("regel1").value;
     if(d == 4){
@@ -34,7 +55,7 @@ Your Bank Deposit request will be processed in 0-1hour and you will also receive
        
     </script>
   
-    <div class="foo"><p>Currency</p></div>
+    <div class="foo xero"><p>Currency</p></div>
     <div class="foo">
     <select name="curr" required="">
     <option value="">Select Option</option>
@@ -58,7 +79,7 @@ Your Bank Deposit request will be processed in 0-1hour and you will also receive
     </div>
     
     <div class="foo"><p>Input Deposit Amount</p></div>
-    <div class="foo"><input type="number" name="amtdept" required="required"></div>
+    <div class="foo"><input type="number" value="{{amount}}" name="amtdept" required="required"></div>
     <div class="foo"><button  onclick="getpop()">Deposit</button></div>
     
     </center>
