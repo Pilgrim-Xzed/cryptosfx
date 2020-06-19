@@ -21,7 +21,8 @@
                                         <div class="bannerText">
                                             <div class="wrapper">
                                                 <div class="bannerContent">
-                                                    <div class="slide_title">We Have</div>
+                                                    <div class="slide_title">We Have {{popup}}
+                                                    </div>
                                                     <div>The Full Package</div>
                                                     <p>Benefit from a packed product suite of</p>
                                                     <p>Forex/CFDs &amp; Binary. Coinwintrade provides</p>
@@ -41,7 +42,8 @@
                                     class="bx-clone ">
                                     <div
                                         style="background-image: url('https://storage.googleapis.com/crypto_static/assets/07/banner_expertise_white.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center center; ">
-                                        <img src="{% static 'assets/07/banner_expertise_white.jpg' %}" style="opacity: 0; ">
+                                        <img src="{% static 'assets/07/banner_expertise_white.jpg' %}"
+                                            style="opacity: 0; ">
                                         <div class="bannerText">
                                             <div class="wrapper">
                                                 <div class="bannerContent">
@@ -112,6 +114,17 @@
                 </div>
             </div>
         </section>
+        {% if popup %}
+        <script>
+            function myFunction(){
+            window.alert('Registration Successful...')
+            }
+        
+        myFunction();
+       
+        </script>
+         {% endif %}
+        
         <section
             style="background: url(https://storage.googleapis.com/crypto_static/assets/07/3icons.jpg) no-repeat 100%; background-size: cover; background-repeat: no-repeat; background-position: center center; ">
             <div class="platform_block wrapper">
@@ -167,6 +180,7 @@
                 <span>Starter Plan</span><br>
                 <h1><b>
                     </b></h1><br>
+                    <h1><b>$200 - $1,000</b></h1>
                 <h4>Min.<br>5% deposit bonus</h4><br>
                 <h4>Integrated online helpcenter</h4><br>
                 <h5 style="width: 100%;display:block;color:white;height:3em;line-height:3em;background:black;">
@@ -184,6 +198,7 @@
             <div class="boxx" style="background: dodgerblue;color:white;border:6px solid dodgerblue;">
                 <span>Platinum Plan</span><br>
                 <h1><b></b></h1><br>
+                <h1><b>$1,500 - $15,000</b></h1>
                 <h4>Min.<br>10% deposit bonus</h4><br>
                 <h4>Integrated online helpcenter</h4><br>
                 <h5 style="width: 100%;display:block;color:white;height:3em;line-height:3em;background:black;">
@@ -202,6 +217,7 @@
             <div class="boxx" style="background: dodgerblue;color:white;border:6px solid dodgerblue;">
                 <span>Gold Plan</span><br>
                 <h1><b></b></h1><br>
+                <h1><b>$15,000 - $50,000</b></h1>
                 <h4>Min.<br>12.5% deposit bonus</h4><br>
                 <h4>Integrated online helpcenter</h4><br>
                 <h5 style="width: 100%;display:block;color:white;height:3em;line-height:3em;background:black;">
@@ -219,6 +235,7 @@
             <div class="boxx" style="background: dodgerblue;color:white;border:6px solid dodgerblue;">
                 <span>Diamond Plan</span><br>
                 <h1><b></b></h1><br>
+                <h1><b>$50,000 - $100,000</b></h1>
                 <h4>Min.<br>20% deposit bonus</h4><br>
                 <h4>Integrated online helpcenter</h4><br>
                 <h5 style="width: 100%;display:block;color:white;height:3em;line-height:3em;background:black;">
@@ -316,8 +333,9 @@
                 color: black;
                 display: block;
             }
-            .blackme{
-                border:2px solid black;
+
+            .blackme {
+                border: 2px solid black;
             }
 
 
@@ -349,12 +367,14 @@
                 display: block;
             }
 
-            #id_password1{
-                border:2px solid black;
+            #id_password1 {
+                border: 2px solid black;
             }
-            #id_password2{
-                border:2px solid black;
+
+            #id_password2 {
+                border: 2px solid black;
             }
+
             #bgnew1 {
                 position: relative;
                 width: 100%;
@@ -368,13 +388,13 @@
             <h2><b>Get Started Today With Coinwintrade</b></h2>
             <p class="lead"><b>Open account for free and start trading Crypto Currencys!</b></p>
         </center>
-    
+
         <center>
             <div id="bgnew1">
 
                 <form method="post" enctype="multipart/form-data">
                     {% csrf_token %}
-                    
+
                     <div class="line">
                         <label for="f1" class="login-lbl" style="font-weight:bold;">
                             <h2><b>Registration Form</b></h2>
@@ -397,7 +417,7 @@
 
                     <div class="line">
                         <label for="f2" class="login-lbl" style="font-weight:bold;">Country</label>
-                       {{form.country}}
+                        {{form.country}}
                     </div>
 
 
@@ -439,6 +459,7 @@
                         <label for="f2" class="login-lbl" style="font-weight:bold;">CONFIRM PASSWORD</label>
                         {{form.password2}}
                     </div>
+                    
 
 
                     <div class="line clearfix">
@@ -446,13 +467,14 @@
                     </div>
 
                     <div class="line" style="color: black;">
-                        <p><a href="/password-reset" style="color: black;font-weight:bold;">Forgot your password?</a></p>
+                        <p><a href="/password-reset" style="color: black;font-weight:bold;">Forgot your password?</a>
+                        </p>
                         <br>
                         <p style="color: black;font-weight:bold;">Already Registered? <a href="?log#form"
                                 style="color: black;font-weight:bold;">Login</a></p>
                     </div>
 
-                  </form>
+                </form>
 
             </div>
         </center>
@@ -571,7 +593,7 @@
                 </div>
             </div>
         </section>
-        <center><img src="log.png"></center>
+        <center><img src="{% static 'assets/images/regel1.png' %}"></center>
         <section class="carouselBlock"
             style="background: url(https://storage.googleapis.com/crypto_static/assets/07/carousel_bg1.jpg) no-repeat 100%; background-size: cover; background-repeat: no-repeat; background-position: center center; ">
             <div class="blockText">
@@ -821,9 +843,11 @@
                 <div class="education_images">
                     <a href="#"><img src="{% static 'assets/cryptocert.jpeg' %}"
                             alt="edu_video"><span>Certification</span></a><br>
-                    <a href="#"><img src="{% static 'assets/07/edu_trading.jpg' %}" alt="edu_trading courses"><span>Trading
+                    <a href="#"><img src="{% static 'assets/07/edu_trading.jpg' %}"
+                            alt="edu_trading courses"><span>Trading
                             Courses</span></a><br>
-                    <a href="#"><img src="{% static 'assets/07/edu_ebook.jpg' %}" alt="edu_ebooks"><span>Ebooks</span></a>
+                    <a href="#"><img src="{% static 'assets/07/edu_ebook.jpg' %}"
+                            alt="edu_ebooks"><span>Ebooks</span></a>
                 </div>
 
             </div>

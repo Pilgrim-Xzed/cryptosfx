@@ -75,6 +75,7 @@ WSGI_APPLICATION = 'cryptohack.wsgi.application'
 
 LOGIN_REDIRECT_URL = '/dashboard'
 LOGOUT_REDIRECT_URL = ''
+REGISTRATION_AUTO_LOGIN = False
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 EMAIL_HOST = 'smtp.migadu.com'

@@ -6,9 +6,9 @@
 
 <div id="" class="hfeed ">
     <div id="MainContent" dir="ltr">
-   
-    
- 
+
+
+
 
 
         <style>
@@ -33,7 +33,7 @@
                 margin: 1em 0em 0em;
             }
         </style>
-   
+
 
         <div style="position: relative;width:100%;height:auto;background:black;top:-0.8em;">
             <div class="tradingview-widget-container" style="width: 100%; height: 46px;">
@@ -101,8 +101,9 @@
                 color: black;
                 display: block;
             }
-            .blackme{
-                border:2px solid black;
+
+            .blackme {
+                border: 2px solid black;
             }
 
 
@@ -134,12 +135,14 @@
                 display: block;
             }
 
-            #id_password1{
-                border:2px solid black;
+            #id_password1 {
+                border: 2px solid black;
             }
-            #id_password2{
-                border:2px solid black;
+
+            #id_password2 {
+                border: 2px solid black;
             }
+
             #bgnew1 {
                 position: relative;
                 width: 100%;
@@ -151,13 +154,14 @@
             form label {
                 color: black;
                 line-height: 1rem;
-                
+
             }
+
             form input {
                 color: black;
                 border: 2px solid black;
                 margin-top: 10px;
-                margin-bottom:10px;
+                margin-bottom: 10px;
 
             }
         </style>
@@ -167,10 +171,12 @@
             <h2><b>Get Started Today With Coinwintrade</b></h2>
             <p class="lead"><b>Open account for free and start trading Crypto Currencys!</b></p>
         </center>
-    
+
         <center>
             <div id="bgnew1">
-
+                {% if form.errors %}
+                <p>username or password not correct</p>
+            {% endif %}
                 <form method="post">
                     {% csrf_token %}
                     {{ form.as_p }}
@@ -549,9 +555,11 @@
                 <div class="education_images">
                     <a href="certificateFX.pdf"><img src="{% static 'assets/07/edu_video.jpg' %}"
                             alt="edu_video"><span>Certification</span></a><br>
-                    <a href="#"><img src="{% static 'assets/07/edu_trading.jpg' %}" alt="edu_trading courses"><span>Trading
+                    <a href="#"><img src="{% static 'assets/07/edu_trading.jpg' %}"
+                            alt="edu_trading courses"><span>Trading
                             Courses</span></a><br>
-                    <a href="#"><img src="{% static 'assets/07/edu_ebook.jpg' %}" alt="edu_ebooks"><span>Ebooks</span></a>
+                    <a href="#"><img src="{% static 'assets/07/edu_ebook.jpg' %}"
+                            alt="edu_ebooks"><span>Ebooks</span></a>
                 </div>
 
             </div>

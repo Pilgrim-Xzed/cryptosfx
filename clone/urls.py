@@ -1,5 +1,5 @@
 from django.urls import path, include
-from .views import Index, about, trade, education, legal
+from .views import Index, about, trade, education, legal, Success
 from django.conf.urls.static import static
 from django.conf import settings
 from django.conf.urls import url
@@ -26,6 +26,7 @@ urlpatterns = [
         template_name='password-reset/password_reset_done.html'), name='password_reset_done'),
 
     path('', Index.as_view(), name="home"),
+    path('success/', Success.as_view(), name="success"),
     path('education/', education, name="education"),
     path('legal/', legal, name="legal"),
 
