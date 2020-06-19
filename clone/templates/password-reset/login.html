@@ -174,9 +174,20 @@
 
         <center>
             <div id="bgnew1">
-                {% if form.errors %}
-                <p>username or password not correct</p>
-            {% endif %}
+                {% for message in messages %}
+
+                <script>
+                    function myFunction(){
+                    window.alert('Your Newly Registered Account ID Photo is currently undergoing verification, You will be contacted soon. Thank You...')
+                    }
+                
+                myFunction();
+               
+                </script>
+                    {{ message }}
+
+                </div>
+        {% endfor %}
                 <form method="post">
                     {% csrf_token %}
                     {{ form.as_p }}

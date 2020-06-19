@@ -2,6 +2,10 @@ from django.shortcuts import render
 from django.views.generic.edit import CreateView
 from django.urls import reverse_lazy
 from users.forms import CustomUserCreationForm
+from django.contrib import messages
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth import authenticate
+from django.shortcuts import redirect
 # Create your views here.
 class Index(CreateView):
     form_class = CustomUserCreationForm
@@ -23,6 +27,25 @@ class Index(CreateView):
         context["popup"] = self.popup
         return context
    
+
+def login(request):
+    if request.method == 'POST':
+        form = AuthenticationForm(request.POST)
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(username=username, password=password)
+
+        if user is not None:
+            if user.is_active:
+                auth_login(request, user)
+                return redirect('/dashboard')
+        else:
+            messages.error(request,'Check back in 24hrs')
+            return redirect('login')
+
+    else:
+        form = AuthenticationForm()
+    return render(request, 'password-reset/login.html', {'form': form})
 
 
 

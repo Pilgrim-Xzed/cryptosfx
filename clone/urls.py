@@ -1,5 +1,5 @@
 from django.urls import path, include
-from .views import Index, about, trade, education, legal, Success
+from .views import Index, about, trade, education, legal, Success, login
 from django.conf.urls.static import static
 from django.conf import settings
 from django.conf.urls import url
@@ -19,8 +19,7 @@ urlpatterns = [
              template_name='password-reset/password_reset_complete.html'
          ),
          name='password_reset_complete'),
-    url(r'^login/$', auth_views.LoginView.as_view(redirect_authenticated_user=True,
-                                                template_name='password-reset/login.html'), name='login'),
+    url(r'^login/$', login, name='login'),
     path('logout/', auth_views.LogoutView.as_view(next_page='home'), name='logout'),
     path('password-reset/done/', auth_views.PasswordResetDoneView.as_view(
         template_name='password-reset/password_reset_done.html'), name='password_reset_done'),
