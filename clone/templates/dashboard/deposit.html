@@ -4,12 +4,36 @@
 {% block content %}
 
     <a id="dep"></a>
+   
     <center>
-    <p>Deposit Request Form</p>
-    
+    <p>Deposit Request Form</p><br>
+    <div id="pop">
+        
+        </div>
     <center>
     </center>
-    <form method="post">
+    <script>
+       function getpop() {
+    d = document.getElementById("regel1").value;
+    if(d == 4){
+        document.getElementById("pop").innerHTML = `<span>
+        <i class="far fa-thumbs-down" style="font-size:30px;color:black"></i><br>
+        Your Crypto Currency request will be processed in 0-1hour and you will also receive an email with notification of the outcome. Please make payment of 500 Euro (EUR) worth Crypto Currency to <div id="p2" style="word-wrap:break-word;"><b>1BJtpBt7Xt4kpnXU2sENngDpfrKFd7QhHD</b></div><button onclick="copyToClipboard('#p2')" title="Copy to Clipboard">Copy Crypto Currency Wallet</button><br>Please do not try this multiple times.</span>
+        <p></p>`
+    }else{
+        document.getElementById("pop").innerHTML = `
+<span>
+<i class="far fa-thumbs-down" style="font-size:30px;color:black"></i><br>
+Your Bank Deposit request will be processed in 0-1hour and you will also receive an email with notification of the outcome. Please make payment of 500 Euro (EUR) via Bank Deposit to us, Kindly await response from us shortly.<br>Please do not try this multiple times.</span>
+<p></p>
+`
+    }
+  
+}
+       
+       
+    </script>
+  
     <div class="foo"><p>Currency</p></div>
     <div class="foo">
     <select name="curr" required="">
@@ -23,20 +47,22 @@
     
     <div class="foo"><p>Payment Method</p></div>
     <div class="foo">
-    <select name="meth" required="">
-    <option value="">Select Option</option>
-    <option>Bank Deposit</option>
-    <option>Western Union</option>
-    <option>Money Gram</option>
-    <option>Crypto Currency</option>
-    <option>Foreign Currency Exchanger</option>
+    <select name="meth"  id="regel1" required="">
+    <option value="0">Select Option</option>
+    <option value="1">Bank Deposit</option>
+    <option value="2">Western Union</option>
+    <option value="3">Money Gram</option>
+    <option value="4">Crypto Currency</option>
+    <option value="5">Foreign Currency Exchanger</option>
     </select>
     </div>
     
     <div class="foo"><p>Input Deposit Amount</p></div>
     <div class="foo"><input type="number" name="amtdept" required="required"></div>
-    <div class="foo"><button type="submit" name="depp">Deposit</button></div>
-    </form>
+    <div class="foo"><button  onclick="getpop()">Deposit</button></div>
+    
     </center>
   
+
+
 {% endblock %}

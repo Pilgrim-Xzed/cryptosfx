@@ -4,7 +4,7 @@ from django.urls import reverse_lazy
 from users.forms import CustomUserCreationForm
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate, login as auth_login
 from django.shortcuts import redirect
 # Create your views here.
 class Index(CreateView):

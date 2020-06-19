@@ -51,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
 ]
 
 ROOT_URLCONF = 'cryptohack.urls'
@@ -71,8 +72,10 @@ TEMPLATES = [
     },
 ]
 
+
 WSGI_APPLICATION = 'cryptohack.wsgi.application'
 
+SESSION_COOKIE_AGE = 600 
 LOGIN_REDIRECT_URL = '/dashboard'
 LOGOUT_REDIRECT_URL = ''
 REGISTRATION_AUTO_LOGIN = False
