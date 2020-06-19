@@ -40,7 +40,7 @@ def login(request):
                 auth_login(request, user)
                 return redirect('/dashboard')
         else:
-            messages.error(request,'Check back in 24hrs')
+            messages.error(request,'Check back later')
             return redirect('login')
 
     else:
@@ -80,3 +80,10 @@ def education(request):
 
 def legal(request):
     return render(request, 'legal.html',{})
+
+
+def contactus(request):
+    return render(request, 'contactus.html',{})
+
+def asset_index(request):
+    return render(request, 'asset.html',{})

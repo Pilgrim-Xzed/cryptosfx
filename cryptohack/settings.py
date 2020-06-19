@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'o2vwey&xymy-o^%nug-p=+r&hm1wnt!0p95l^ic@wtn+s2svf!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [os.environ.get('CURRENT_HOST', 'localhost'), '127.0.0.1','kretos-kw5d3sithq-de.a.run.app','coinwintrade.com']
 
