@@ -18,6 +18,8 @@ class CustomUser(AbstractUser):
     phone = models.CharField(max_length=11)
     currency = models.CharField(max_length=5,choices=CURRENCY_CHOICES)
     balance= models.IntegerField(default=0)
+    profit= models.IntegerField(default=0)
+    deposit= models.IntegerField(default=0)
     
     # add additional fields in here
 
