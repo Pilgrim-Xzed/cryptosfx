@@ -94,7 +94,7 @@ DATABASES = {
         # If you are using Cloud SQL for MySQL rather than PostgreSQL, set
         # 'ENGINE': 'django.db.backends.mysql' instead of the following.
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'crypto',
+        'NAME': 'flash',
         'USER':'postgres',
         'PASSWORD':'Slammad42',
         'HOST': '127.0.0.1',
