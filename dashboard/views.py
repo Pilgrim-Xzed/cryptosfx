@@ -35,7 +35,6 @@ class WithdrawView(CreateView):
 
 
 def deposit(request):
-    model = User
     amount = request.GET.get('amount')
     return render(request, 'dashboard/deposit.html',{"amount":amount})
 

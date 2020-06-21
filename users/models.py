@@ -13,9 +13,11 @@ class CustomUser(AbstractUser):
     country = models.CharField(max_length=50,choices=COUNTRY_CHOICES)
     phone = models.CharField(max_length=11)
     currency = models.CharField(max_length=5,choices=CURRENCY_CHOICES)
-    
+    balance = models.IntegerField(default=0)
 
     # add additional fields in here
 
     def __str__(self):
         return self.username
+
+
