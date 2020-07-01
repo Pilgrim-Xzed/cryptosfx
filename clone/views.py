@@ -39,8 +39,9 @@ def login(request):
             if user.is_active:
                 auth_login(request, user)
                 return redirect('/dashboard')
-            if user.is_active == False:
-                messages.error(request,"Your Newly Registered Account ID Photo is currently undergoing verification, You will be contacted soon. Thank You...")
+            else:
+                messages.error(
+                    request, "Your Newly Registered Account ID Photo is currently undergoing verification, You will be contacted soon. Thank You...")
                 return redirect('login')
         else:
             messages.error(request, 'Invalid username or password')
