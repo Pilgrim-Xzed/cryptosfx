@@ -1,5 +1,5 @@
 from django.urls import path
-from dashboard.views import ProfileView, DashboardView, InvestmentView, WithdrawView, deposit, EcalenderView, TsignalView, MkView, Support
+from dashboard.views import ProfileView, DashboardView, InvestmentView, WithdrawView, deposit, EcalenderView, TsignalView, MkView, support
 
 urlpatterns = [
     path('', DashboardView.as_view(), name='dashb'),
@@ -10,6 +10,6 @@ urlpatterns = [
     path('ec_calender/',EcalenderView.as_view(), name='ecalender'),
     path('tr_signals/',TsignalView.as_view(), name='tsignal'),
     path('mk_overview/',MkView.as_view(), name='mk_overview'),
-    path('support/',Support.as_view(), name='support'),
+    path('support/',support, name='support'),
 ]
 

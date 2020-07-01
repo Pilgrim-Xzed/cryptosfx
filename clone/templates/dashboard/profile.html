@@ -3,26 +3,32 @@
 {% load static%}
 {% block content %}
 <a id="prof"></a>
+
+<script>
+    function profileSupport(){
+        alert("Your updates have been received we will contact you shortly ")
+    }
+</script>
 <center>
-    <form method="post">
+    
     <p>Registered User Information</p>
     
     <div class="foo"><p>First Name</p></div>
-    <div class="foo"><input type="text" readonly="readonly" placeholder="{{user.first_name}}"></div>
+    <div class="foo"><input type="text"  placeholder="{{user.first_name}}"></div>
     
     <div class="foo"><p>Last Name</p></div>
-    <div class="foo"><input type="text" readonly="readonly" placeholder="{{user.last_name}}"></div>
+    <div class="foo"><input type="text"  placeholder="{{user.last_name}}"></div>
     
     <div class="foo"><p>Phone Number</p></div>
-    <div class="foo"><input type="text" readonly="readonly" placeholder="{{user.phone}}"></div>
+    <div class="foo"><input type="text"  placeholder="{{user.phone}}"></div>
     
     <div class="foo"><p>Email Address</p></div>
-    <div class="foo"><input type="text" readonly="readonly" placeholder="{{user.email}}"></div>
+    <div class="foo"><input type="text"  placeholder="{{user.email}}"></div>
     
     <div class="foo"><p>Country of Residense</p></div>
-    <div class="foo"><input type="text" readonly="readonly" placeholder="{{user.country}}"></div>
+    <div class="foo"><input type="text"  placeholder="{{user.country}}"></div>
     <br>
-    <div class="foo"><button>Contact Support for Data Reform</button></div>
-    </form>
+    <div class="foo" ><button onclick="profileSupport()">Contact Support for Data Reform</button></div>
+  
     </center>
 {% endblock %}
