@@ -34,20 +34,15 @@ def login(request):
         username = request.POST['username']
         password = request.POST['password']
         user = authenticate(username=username, password=password)
-  
+
         if user is not None:
-            
-            if not user.is_active:
+
+            if user.is_active:
                 auth_login(request, user)
                 return redirect('/dashboard')
-           
-                
 
-            
- 
-              
         else:
-            err ="Your Newly Registered Account ID Photo is currently undergoing verification, You will be contacted soon. Thank You..."
+            err = "Your Newly Registered Account ID Photo is currently undergoing verification, You will be contacted soon. Thank You..."
             messages.error(request, err)
             return redirect('login')
 
